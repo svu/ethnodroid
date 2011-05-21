@@ -13,7 +13,8 @@ public class LanguagePageParser {
 	public static class ParseResults {
 
 		public static class CountryInfo {
-			private String isoCode;
+			private String languageIsoCode;
+			private String countryIsoCode;
 			private String countryNameText;
 			private String populationText;
 			private String locationText;
@@ -26,14 +27,6 @@ public class LanguagePageParser {
 			private String languageDevelopmentText;
 			private String writingSystemText;
 			private String commentsText;
-
-			public void setIsoCode(String isoCode) {
-				this.isoCode = isoCode;
-			}
-
-			public String getIsoCode() {
-				return isoCode;
-			}
 
 			public void setPopulationText(String populationText) {
 				this.populationText = populationText;
@@ -132,6 +125,22 @@ public class LanguagePageParser {
 				return countryNameText;
 			}
 
+			public void setLanguageIsoCode(String languageIsoCode) {
+				this.languageIsoCode = languageIsoCode;
+			}
+
+			public String getLanguageIsoCode() {
+				return languageIsoCode;
+			}
+
+			public void setCountryIsoCode(String countryIsoCode) {
+				this.countryIsoCode = countryIsoCode;
+			}
+
+			public String getCountryIsoCode() {
+				return countryIsoCode;
+			}
+
 		};
 
 		private ArrayList<CountryInfo> countries = new ArrayList<CountryInfo>();
@@ -169,7 +178,7 @@ public class LanguagePageParser {
 	final private Pattern CODE_MATCHER = Pattern
 			.compile("\\s*<p><a href=\"ethno_docs/introduction.asp#iso_code\".*<a href=\"http://www.sil.org/iso639-3/documentation.asp\\?id=.*\" target=\"_blank\">(.*)</a></p>\\s*");
 	final private Pattern COUNTRY_NAME_MATCHER = Pattern
-			.compile("\\s*<h2>A language of <a HREF=\"show_country.asp\\?name=.*\">(.*)</a></h2>\\s*");
+			.compile("\\s*<h2>A language of <a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h2>\\s*");
 	final private Pattern POPULATION_HDR_MATCHER = Pattern
 			.compile(getPatternFromLabel("population"));
 	final private Pattern LOCATION_HDR_MATCHER = Pattern
@@ -193,7 +202,7 @@ public class LanguagePageParser {
 	final private Pattern COMMENTS_HDR_MATCHER = Pattern
 			.compile(getPatternFromLabel("other"));
 	final private Pattern OTHER_COUNTRY_MATCHER = Pattern
-			.compile("\\s*<h4><a HREF=\"show_country.asp\\?name=[A-Z]+\">(.*)</a></h4>\\s*");
+			.compile("\\s*<h4><a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h4>\\s*");
 
 	final private PatternToStateTuple[] patternsStateMap = new PatternToStateTuple[] {
 			new PatternToStateTuple(POPULATION_HDR_MATCHER, State.POPULATION),
@@ -231,19 +240,21 @@ public class LanguagePageParser {
 				if (m.matches()) {
 					country = new ParseResults.CountryInfo();
 					results.getCountries().add(country);
-					country.setCountryNameText(m.group(1));
+					country.setCountryIsoCode(m.group(1));
+					country.setCountryNameText(m.group(2));
 					break;
 				}
 				m = CODE_MATCHER.matcher(inputLine);
 				if (m.matches()) {
-					country.setIsoCode(m.group(1));
+					country.setLanguageIsoCode(m.group(1));
 					break;
 				}
 				m = OTHER_COUNTRY_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country = new ParseResults.CountryInfo();
 					results.getCountries().add(country);
-					country.setCountryNameText(m.group(1));
+					country.setCountryIsoCode(m.group(1));
+					country.setCountryNameText(m.group(2));
 					break;
 				}
 				for (PatternToStateTuple p2s : patternsStateMap) {

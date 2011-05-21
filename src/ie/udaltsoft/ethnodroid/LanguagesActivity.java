@@ -272,14 +272,15 @@ public class LanguagesActivity extends Activity {
 					final LanguagePageParser.ParseResults.CountryInfo ci = results
 							.getCountries().get(0);
 
-					if (ci.getIsoCode() == null) {
+					if (ci.getLanguageIsoCode() == null) {
 						((TextView) findViewById(R.id.errorText))
 								.setText(getText(R.string.no_language_info_found));
 						activateErrorView();
 						return;
 					}
 
-					if (!ci.getIsoCode().equals(mEditor.getText().toString())) {
+					if (!ci.getLanguageIsoCode().equals(
+							mEditor.getText().toString())) {
 						((TextView) findViewById(R.id.errorText))
 								.setText(getText(R.string.no_language_info_found));
 						activateErrorView();
@@ -287,7 +288,7 @@ public class LanguagesActivity extends Activity {
 					}
 
 					((TextView) findViewById(R.id.isoCodesText)).setText(ci
-							.getIsoCode());
+							.getLanguageIsoCode());
 					((TextView) findViewById(R.id.countryNameText)).setText(ci
 							.getCountryNameText());
 					((TextView) findViewById(R.id.populationText)).setText(ci
