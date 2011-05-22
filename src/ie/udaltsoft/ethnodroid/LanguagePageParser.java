@@ -2,6 +2,7 @@ package ie.udaltsoft.ethnodroid;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,9 +11,14 @@ import android.text.Html;
 
 public class LanguagePageParser {
 
-	public static class ParseResults {
+	public static class ParseResults implements Serializable {
 
-		public static class CountryInfo {
+		private static final long serialVersionUID = 1L;
+
+		public static class CountryInfo implements Serializable {
+
+			private static final long serialVersionUID = 1L;
+			
 			private String languageIsoCode;
 			private String countryIsoCode;
 			private String countryNameText;
@@ -178,7 +184,7 @@ public class LanguagePageParser {
 	final private Pattern CODE_MATCHER = Pattern
 			.compile("\\s*<p><a href=\"ethno_docs/introduction.asp#iso_code\".*<a href=\"http://www.sil.org/iso639-3/documentation.asp\\?id=.*\" target=\"_blank\">(.*)</a></p>\\s*");
 	final private Pattern COUNTRY_NAME_MATCHER = Pattern
-			.compile("\\s*<h2>A language of <a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h2>\\s*");
+			.compile("\\s*<h2>.* language of <a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h2>\\s*");
 	final private Pattern POPULATION_HDR_MATCHER = Pattern
 			.compile(getPatternFromLabel("population"));
 	final private Pattern LOCATION_HDR_MATCHER = Pattern
