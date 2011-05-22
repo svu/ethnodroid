@@ -34,13 +34,11 @@
          give it a custom background; see colors.xml for the definition
          of drawable/semi_black-->
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
-    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/languagePattern" android:drawableRight="@android:drawable/ic_menu_search"></EditText>
     <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languageScrollView" android:scrollbars="vertical">
     <LinearLayout
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/semi_black" android:layout_width="match_parent">
-        <TextView android:text="TextView" android:layout_width="wrap_content" style="@style/ErrorMessage" android:layout_height="wrap_content" android:id="@+id/errorMessage"></TextView>
         <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="6dip" android:id="@+id/languateInfoTableLayout" android:shrinkColumns="1">
             <TableRow android:id="@+id/isoCodeRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
                 <TextView android:layout_height="wrap_content" android:text="@string/iso_codes_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/isoCodesTitle" android:layout_width="wrap_content"></TextView>
@@ -91,27 +89,6 @@
                 <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/commentsText" android:layout_width="wrap_content"></TextView>
             </TableRow>
         </TableLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical" android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:background="@drawable/semi_black" android:layout_width="match_parent">
-
-        <!-- On the left: the "back" button.  See styles.xml for the
-             definition of style/ActionButton, which we use to hold
-             common attributes that are used for both this and the
-             clear button.  See strings.xml for the definition of
-             string/back. -->
-        <Button android:layout_height="wrap_content" android:id="@+id/search" android:text="@string/search" style="@style/ActionButton" android:drawableLeft="@android:drawable/ic_menu_search" android:layout_width="0px" android:layout_weight="1" android:paddingLeft="12dip" android:paddingRight="3dip"></Button>
-
-        <!-- In the middle: a custom image, -->
-
-        <!-- On the right: another button, this time with its text color
-             changed to red.  Again, see colors.xml for the definition. -->
-        <Button android:id="@+id/clear" style="@style/ActionButton"
-            android:text="@string/clear" android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel" android:layout_weight="1" android:layout_width="0px" android:paddingLeft="3dip" android:paddingRight="12dip"/>
-
-    </LinearLayout>
     </LinearLayout>
     </ScrollView>
 
