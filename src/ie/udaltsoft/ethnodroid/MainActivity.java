@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
 	OnClickListener mActivateLanguagesListener = new OnClickListener() {
 		public void onClick(View v) {
 			final Intent i = new Intent(MainActivity.this,
-					LanguagesActivity.class);
+					LanguagesSearchActivity.class);
 			startActivity(i);
 		}
 	};

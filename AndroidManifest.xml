@@ -38,18 +38,15 @@
              can launch and interact with.  The "name" attribute is the
              name of the class within your package that implements this
              activity. -->
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.MainActivity">
+        <activity android:icon="@drawable/ethnobook" android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
-        </activity><activity android:icon="@drawable/ethnobook" android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.LanguagesActivity">
-        <!-- An IntentFilter tells the system when it should use your
-                 activity.  This allows the user to get to your activity
-                 without someone having to explicitly know to launch your
-                 class "com.examplel.android.skeletonapp.SkeletonActivity". -->
+        </activity><activity android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.LanguagesActivity">
 
         </activity>
+        <activity android:name="ie.udaltsoft.ethnodroid.LanguagesSearchActivity" android:theme="@android:style/Theme.NoTitleBar" ></activity>
         
 
     </application>
