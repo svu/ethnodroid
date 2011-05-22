@@ -40,59 +40,57 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/semi_black" android:layout_width="match_parent">
-        <ViewSwitcher android:id="@+id/layoutViewSwitcher" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languateInfoTableLayout" android:shrinkColumns="1" android:paddingBottom="6dip">
-                <TableRow android:layout_width="wrap_content" android:id="@+id/isoCodeRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/iso_codes_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/isoCodesTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/isoCodesText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/countryNameRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/country_name_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/countryNameTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/countryNameText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/populationRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/population_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/populationTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/populationText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/regionRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/region_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/regionTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/regionText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/languageMapRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/language_map_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/languageMapTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:clickable="true" android:id="@+id/languageMapText" style="@style/Hyperlink"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/alternateNamesRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/alternate_names_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/alternateNamesTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/alternateNamesText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/dialectsRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/dialects_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/dialectsTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/dialectsText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/classificationRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/classification_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/classificationTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/classificationText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/languageUseRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/language_use_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/languageUseTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/languageUseText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/languageDevelopmentRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/language_development_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/languageDevelopmentTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/languageDevelopmentText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/writingSystemRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/writing_system_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/writingSystemTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/writingSystemText" style="@style/InfoItem"></TextView>
-                </TableRow>
-                <TableRow android:layout_width="wrap_content" android:id="@+id/commentsRow" android:layout_height="wrap_content">
-                    <TextView android:layout_height="wrap_content" android:text="@string/comments_title" android:layout_width="wrap_content" android:paddingRight="6dip" android:id="@+id/commentsTitle" style="@style/InfoItemTitle"></TextView>
-                    <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/commentsText" style="@style/InfoItem"></TextView>
-                </TableRow>
-            </TableLayout>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:id="@+id/errorText" style="@style/ErrorMessage"></TextView>
-        </ViewSwitcher>
+        <TextView android:text="TextView" android:layout_width="wrap_content" style="@style/ErrorMessage" android:layout_height="wrap_content" android:id="@+id/errorMessage"></TextView>
+        <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="6dip" android:id="@+id/languateInfoTableLayout" android:shrinkColumns="1">
+            <TableRow android:id="@+id/isoCodeRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/iso_codes_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/isoCodesTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/isoCodesText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/countryNameRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/country_name_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/countryNameTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/countryNameText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/populationRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/population_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/populationTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/populationText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/regionRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/region_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/regionTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/regionText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/languageMapRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/language_map_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/languageMapTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/Hyperlink" android:clickable="true" android:id="@+id/languageMapText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/alternateNamesRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/alternate_names_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/alternateNamesTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/alternateNamesText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/dialectsRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/dialects_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/dialectsTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/dialectsText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/classificationRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/classification_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/classificationTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/classificationText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/languageUseRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/language_use_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/languageUseTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/languageUseText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/languageDevelopmentRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/language_development_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/languageDevelopmentTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/languageDevelopmentText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/writingSystemRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/writing_system_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/writingSystemTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/writingSystemText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/commentsRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" android:text="@string/comments_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/commentsTitle" android:layout_width="wrap_content"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/commentsText" android:layout_width="wrap_content"></TextView>
+            </TableRow>
+        </TableLayout>
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical" android:gravity="center_horizontal"

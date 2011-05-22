@@ -40,7 +40,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ViewSwitcher;
 
 /**
  * This class provides a basic demonstration of how to write an Android
@@ -53,7 +52,6 @@ public class LanguagesActivity extends Activity {
 	static final private int CLEAR_ID = Menu.FIRST + 1;
 
 	private EditText mEditor;
-	private int currentView;
 
 	public LanguagesActivity() {
 	}
@@ -82,8 +80,7 @@ public class LanguagesActivity extends Activity {
 		mEditor.setOnKeyListener(mSearchKeyListener);
 		mEditor.setText("");
 		resetFields();
-
-		currentView = 0;
+		hideErrorMessage();
 	}
 
 	/**
@@ -157,27 +154,16 @@ public class LanguagesActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void switchView() {
-		((ViewSwitcher) findViewById(R.id.layoutViewSwitcher)).showNext();
-		currentView = 1 - currentView;
+	private void hideErrorMessage() {
+		findViewById(R.id.errorMessage).setVisibility(View.GONE);
+		findViewById(R.id.languateInfoTableLayout).setVisibility(View.VISIBLE);
 	}
 
-	private boolean isErrorViewActive() {
-		return currentView == 1;
-	}
-
-	private boolean isInfoViewActive() {
-		return currentView == 0;
-	}
-
-	private void activateInfoView() {
-		if (isErrorViewActive())
-			switchView();
-	}
-
-	private void activateErrorView() {
-		if (isInfoViewActive())
-			switchView();
+	private void displayErrorMessage(CharSequence message) {
+		TextView errorMessage = (TextView) findViewById(R.id.errorMessage);
+		errorMessage.setVisibility(View.VISIBLE);
+		errorMessage.setText(message);
+		findViewById(R.id.languateInfoTableLayout).setVisibility(View.GONE);
 	}
 
 	OnKeyListener mSearchKeyListener = new OnKeyListener() {
@@ -214,7 +200,7 @@ public class LanguagesActivity extends Activity {
 				@Override
 				protected void onPreExecute() {
 					resetFields();
-					activateInfoView();
+					hideErrorMessage();
 
 					dialog = new ProgressDialog(LanguagesActivity.this);
 					dialog.setMessage(getText(R.string.loading));
@@ -263,9 +249,7 @@ public class LanguagesActivity extends Activity {
 					dialog.hide();
 
 					if (result != null) {
-						((TextView) findViewById(R.id.errorText))
-								.setText(result);
-						activateErrorView();
+						displayErrorMessage(result);
 						return;
 					}
 
@@ -273,17 +257,13 @@ public class LanguagesActivity extends Activity {
 							.getCountries().get(0);
 
 					if (ci.getLanguageIsoCode() == null) {
-						((TextView) findViewById(R.id.errorText))
-								.setText(getText(R.string.no_language_info_found));
-						activateErrorView();
+						displayErrorMessage(getText(R.string.no_language_info_found));
 						return;
 					}
 
 					if (!ci.getLanguageIsoCode().equals(
 							mEditor.getText().toString())) {
-						((TextView) findViewById(R.id.errorText))
-								.setText(getText(R.string.no_language_info_found));
-						activateErrorView();
+						displayErrorMessage(getText(R.string.no_language_info_found));
 						return;
 					}
 
