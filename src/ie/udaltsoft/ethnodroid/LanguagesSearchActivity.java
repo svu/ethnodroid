@@ -1,20 +1,8 @@
-/*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package ie.udaltsoft.ethnodroid;
+
+import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
+import ie.udaltsoft.ethnodroid.parsers.LanguagePageParser;
+import ie.udaltsoft.ethnodroid.parsers.ParseResults;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -40,11 +28,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * This class provides a basic demonstration of how to write an Android
- * activity. Inside of its window, it places a single view: an EditText that
- * displays and edits some internal text.
- */
 public class LanguagesSearchActivity extends Activity {
 
 	static final private int SEARCH_ID = Menu.FIRST;
@@ -57,7 +40,6 @@ public class LanguagesSearchActivity extends Activity {
 	public LanguagesSearchActivity() {
 	}
 
-	/** Called with the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,18 +62,12 @@ public class LanguagesSearchActivity extends Activity {
 		hideErrorMessage();
 	}
 
-	/**
-	 * Called when the activity is about to start interacting with the user.
-	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
 
 	}
 
-	/**
-	 * Called when your activity's options menu needs to be created.
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -102,9 +78,6 @@ public class LanguagesSearchActivity extends Activity {
 		return true;
 	}
 
-	/**
-	 * Called when a menu item is selected.
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -146,7 +119,7 @@ public class LanguagesSearchActivity extends Activity {
 
 			final AsyncTask<String, Integer, String> extractLanguageTask = new AsyncTask<String, Integer, String>() {
 				private ProgressDialog dialog;
-				private LanguagePageParser.ParseResults results;
+				private ParseResults results;
 
 				@Override
 				protected void onPreExecute() {
@@ -208,7 +181,7 @@ public class LanguagesSearchActivity extends Activity {
 						return;
 					}
 
-					final LanguagePageParser.ParseResults.CountryInfo ci = results
+					final CountryInfo ci = results
 							.getCountries().get(0);
 
 					if (ci.getLanguageIsoCode() == null) {
@@ -233,9 +206,6 @@ public class LanguagesSearchActivity extends Activity {
 		}
 	};
 
-	/**
-	 * A call-back for when the user presses the clear button.
-	 */
 	OnClickListener mClearListener = new OnClickListener() {
 		public void onClick(View v) {
 			mEditor.setText("");

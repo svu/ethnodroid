@@ -1,46 +1,29 @@
-/*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package ie.udaltsoft.ethnodroid;
 
+import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
+import ie.udaltsoft.ethnodroid.parsers.ParseResults;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-/**
- * This class provides a basic demonstration of how to write an Android
- * activity. Inside of its window, it places a single view: an EditText that
- * displays and edits some internal text.
- */
 public class LanguagesActivity extends Activity {
 
 	public LanguagesActivity() {
 	}
 
-	/** Called with the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// Inflate our UI from its XML layout description.
 		setContentView(R.layout.language_layout);
 
 		((ImageView) findViewById(R.id.topImage))
@@ -51,23 +34,33 @@ public class LanguagesActivity extends Activity {
 
 		resetFields();
 
-		final LanguagePageParser.ParseResults results = (LanguagePageParser.ParseResults) getIntent()
+		final ParseResults results = (ParseResults) getIntent()
 				.getSerializableExtra("results");
 		if (results != null) {
 			displayCountry(results.getCountries().get(0));
 		}
+
+		final Spinner languageCountriesList = ((Spinner) findViewById(R.id.languageCountriesList));
+		if (results.getCountries().size() > 1) {
+			final ArrayAdapter<CountryInfo> lcla = new ArrayAdapter<CountryInfo>(
+					this, android.R.layout.simple_spinner_dropdown_item,
+					results.getCountries());
+			languageCountriesList.setAdapter(lcla);
+			languageCountriesList
+					.setOnItemSelectedListener(mCountryListListener);
+		} else {
+			languageCountriesList.setVisibility(View.GONE);
+		}
 	}
 
-	/**
-	 * Called when the activity is about to start interacting with the user.
-	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
 	}
 
 	private void resetFields() {
-		((TextView) findViewById(R.id.isoCodesText)).setText("");
+		((TextView) findViewById(R.id.languageIsoCodesText)).setText("");
+		((TextView) findViewById(R.id.countryIsoCodeText)).setText("");
 		((TextView) findViewById(R.id.countryNameText)).setText("");
 		((TextView) findViewById(R.id.populationText)).setText("");
 		((TextView) findViewById(R.id.regionText)).setText("");
@@ -82,7 +75,7 @@ public class LanguagesActivity extends Activity {
 		((TextView) findViewById(R.id.commentsText)).setText("");
 	}
 
-	OnClickListener mLanguageMapListener = new OnClickListener() {
+	private OnClickListener mLanguageMapListener = new OnClickListener() {
 		public void onClick(View v) {
 			final Object url = ((TextView) findViewById(R.id.languageMapText))
 					.getTag();
@@ -94,9 +87,26 @@ public class LanguagesActivity extends Activity {
 		}
 	};
 
-	public void displayCountry(LanguagePageParser.ParseResults.CountryInfo ci) {
-		((TextView) findViewById(R.id.isoCodesText)).setText(ci
+	private OnItemSelectedListener mCountryListListener = new OnItemSelectedListener() {
+
+		public void onItemSelected(AdapterView<?> parent, View view, int pos,
+				long id) {
+			final CountryInfo country = (CountryInfo) parent
+					.getItemAtPosition(pos);
+			if (country != null)
+				displayCountry(country);
+		}
+
+		public void onNothingSelected(AdapterView<?> parent) {
+			resetFields();
+		}
+	};
+
+	public void displayCountry(CountryInfo ci) {
+		((TextView) findViewById(R.id.languageIsoCodesText)).setText(ci
 				.getLanguageIsoCode());
+		((TextView) findViewById(R.id.countryIsoCodeText)).setText(ci
+				.getCountryIsoCode());
 		((TextView) findViewById(R.id.countryNameText)).setText(ci
 				.getCountryNameText());
 		((TextView) findViewById(R.id.populationText)).setText(ci

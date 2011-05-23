@@ -34,15 +34,20 @@
          give it a custom background; see colors.xml for the definition
          of drawable/semi_black-->
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
+    <Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languageCountriesList"></Spinner>
     <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languageScrollView" android:scrollbars="vertical">
     <LinearLayout
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/semi_black" android:layout_width="match_parent">
         <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="6dip" android:id="@+id/languateInfoTableLayout" android:shrinkColumns="1">
-            <TableRow android:id="@+id/isoCodeRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <TextView android:layout_height="wrap_content" android:text="@string/iso_codes_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/isoCodesTitle" android:layout_width="wrap_content"></TextView>
-                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:id="@+id/isoCodesText" android:layout_width="wrap_content"></TextView>
+            <TableRow android:id="@+id/languageIsoCodeRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" style="@style/InfoItemTitle" android:paddingRight="6dip" android:layout_width="wrap_content" android:id="@+id/languageIsoCodesTitle" android:text="@string/language_iso_codes_title"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:layout_width="wrap_content" android:id="@+id/languageIsoCodesText"></TextView>
+            </TableRow>
+            <TableRow android:id="@+id/countryIsoCodeRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_height="wrap_content" style="@style/InfoItemTitle" android:paddingRight="6dip" android:layout_width="wrap_content" android:id="@+id/countryIsoCodeTitle" android:text="@string/country_iso_code_title"></TextView>
+                <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:layout_width="wrap_content" android:id="@+id/countryIsoCodeText"></TextView>
             </TableRow>
             <TableRow android:id="@+id/countryNameRow" android:layout_width="wrap_content" android:layout_height="wrap_content">
                 <TextView android:layout_height="wrap_content" android:text="@string/country_name_title" style="@style/InfoItemTitle" android:paddingRight="6dip" android:id="@+id/countryNameTitle" android:layout_width="wrap_content"></TextView>
