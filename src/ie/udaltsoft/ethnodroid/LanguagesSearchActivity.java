@@ -2,7 +2,7 @@ package ie.udaltsoft.ethnodroid;
 
 import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
 import ie.udaltsoft.ethnodroid.parsers.LanguagePageParser;
-import ie.udaltsoft.ethnodroid.parsers.ParseResults;
+import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -11,7 +11,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -25,17 +24,14 @@ import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-public class LanguagesSearchActivity extends Activity {
+public class LanguagesSearchActivity extends EthnodroidActivity {
 
 	static final private int SEARCH_ID = Menu.FIRST;
 	static final private int CLEAR_ID = Menu.FIRST + 1;
 
 	private EditText mEditor;
-
-	private final static boolean isRemote = true;
 
 	public LanguagesSearchActivity() {
 	}
@@ -46,13 +42,11 @@ public class LanguagesSearchActivity extends Activity {
 
 		// Inflate our UI from its XML layout description.
 		setContentView(R.layout.language_search_layout);
+		setBrowserLink();
 
 		// Find the text editor view inside the layout, because we
 		// want to do various programmatic things with it.
 		mEditor = (EditText) findViewById(R.id.languagePattern);
-
-		((ImageView) findViewById(R.id.topImage))
-				.setOnClickListener(new BrowseEthnologueClickListener(this));
 
 		((Button) findViewById(R.id.search))
 				.setOnClickListener(mSearchListener);
@@ -119,7 +113,7 @@ public class LanguagesSearchActivity extends Activity {
 
 			final AsyncTask<String, Integer, String> extractLanguageTask = new AsyncTask<String, Integer, String>() {
 				private ProgressDialog dialog;
-				private ParseResults results;
+				private LanguageParseResults results;
 
 				@Override
 				protected void onPreExecute() {
@@ -149,7 +143,7 @@ public class LanguagesSearchActivity extends Activity {
 							rdr = new BufferedReader(new InputStreamReader(is));
 						} else {
 							final AssetManager am = getAssets();
-							is = am.open("sample.eng.txt");
+							is = am.open("show_language.eng.txt");
 							rdr = new BufferedReader(new InputStreamReader(is,
 									Charset.forName("windows-1252")));
 						}
@@ -181,8 +175,7 @@ public class LanguagesSearchActivity extends Activity {
 						return;
 					}
 
-					final CountryInfo ci = results
-							.getCountries().get(0);
+					final CountryInfo ci = results.getCountries().get(0);
 
 					if (ci.getLanguageIsoCode() == null) {
 						displayErrorMessage(getText(R.string.no_language_info_found));
@@ -196,7 +189,7 @@ public class LanguagesSearchActivity extends Activity {
 					}
 
 					final Intent i = new Intent(LanguagesSearchActivity.this,
-							LanguagesActivity.class);
+							LanguageActivity.class);
 					i.putExtra("results", results);
 					startActivity(i);
 				}

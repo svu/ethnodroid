@@ -1,6 +1,5 @@
 package ie.udaltsoft.ethnodroid;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,9 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends EthnodroidActivity {
 
 	static final private int BACK_ID = Menu.FIRST;
 
@@ -24,9 +22,7 @@ public class MainActivity extends Activity {
 
 		// Inflate our UI from its XML layout description.
 		setContentView(R.layout.main_layout);
-
-		((ImageView) findViewById(R.id.topImage))
-				.setOnClickListener(new BrowseEthnologueClickListener(this));
+		setBrowserLink();
 
 		((Button) findViewById(R.id.activateLanguagesButton))
 				.setOnClickListener(mActivateLanguagesListener);

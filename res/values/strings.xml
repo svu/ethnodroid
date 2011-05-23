@@ -29,8 +29,8 @@
     <string name="country_name_title">Country</string>
     <string name="population_title">Population</string>
     <string name="region_title">Region</string>
-    <string name="language_iso_codes_title">Language ISO codes</string>
-    <string name="country_iso_code_title">Country ISO codes</string>
+    <string name="language_iso_code_title">Language ISO code</string>
+    <string name="country_iso_code_title">Country ISO code</string>
     <string name="language_map_title">Language map</string>
     <string name="alternate_names_title">Alternate names</string>
     <string name="dialects_title">Dialects</string>

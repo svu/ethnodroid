@@ -79,12 +79,12 @@ public class LanguagePageParser {
 	public LanguagePageParser() {
 	}
 
-	public ParseResults parse(BufferedReader rdr) throws IOException {
+	public LanguageParseResults parse(BufferedReader rdr) throws IOException {
 		State state = State.BLANK;
 		String inputLine;
 		Matcher m;
 
-		final ParseResults results = new ParseResults();
+		final LanguageParseResults results = new LanguageParseResults();
 		CountryInfo country = null;
 
 		while ((inputLine = rdr.readLine()) != null) {

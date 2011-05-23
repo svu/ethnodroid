@@ -11,7 +11,7 @@ public class CountryInfo implements Serializable {
 	private String countryNameText;
 	private String populationText;
 	private String locationText;
-	private String languageMapURL;
+	private String languageMapURLParams;
 	private String languageMapText;
 	private String alternateNamesText;
 	private String dialectsText;
@@ -37,12 +37,12 @@ public class CountryInfo implements Serializable {
 		return locationText;
 	}
 
-	public void setLanguageMapURL(String languageMapURL) {
-		this.languageMapURL = languageMapURL;
+	public void setLanguageMapURL(String languageMapURLParams) {
+		this.languageMapURLParams = languageMapURLParams;
 	}
 
-	public String getLanguageMapURL() {
-		return languageMapURL;
+	public String getLanguageMapURLParams() {
+		return languageMapURLParams;
 	}
 
 	public void setLanguageMapText(String languageMapText) {
@@ -117,8 +117,8 @@ public class CountryInfo implements Serializable {
 		return countryNameText;
 	}
 
-	public void setLanguageIsoCode(String languageIsoCode) {
-		this.languageIsoCode = languageIsoCode;
+	public void setLanguageIsoCode(String languageIsoCodes) {
+		this.languageIsoCode = languageIsoCodes;
 	}
 
 	public String getLanguageIsoCode() {

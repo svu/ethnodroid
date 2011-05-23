@@ -3,7 +3,7 @@ package ie.udaltsoft.ethnodroid.parsers;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ParseResults implements Serializable {
+public class LanguageParseResults implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
