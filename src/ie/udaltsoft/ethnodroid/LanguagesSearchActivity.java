@@ -4,7 +4,6 @@ import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
@@ -12,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class LanguagesSearchActivity extends EthnodroidActivity {
-
-	static final private int SEARCH_ID = Menu.FIRST;
-	static final private int CLEAR_ID = Menu.FIRST + 1;
 
 	private EditText mEditor;
 
@@ -43,30 +39,10 @@ public class LanguagesSearchActivity extends EthnodroidActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-
-		menu.add(0, SEARCH_ID, 0, R.string.search).setShortcut('0', 's');
-		menu.add(0, CLEAR_ID, 0, R.string.clear).setShortcut('1', 'c');
-
-		return true;
+		return false;
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case SEARCH_ID:
-			mSearchListener.onClick(null);
-			return true;
-		case CLEAR_ID:
-			mClearListener.onClick(null);
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
-
-	OnKeyListener mSearchKeyListener = new OnKeyListener() {
-
+	private final OnKeyListener mSearchKeyListener = new OnKeyListener() {
 		public boolean onKey(View view, int keyCode, KeyEvent event) {
 			if (keyCode == KeyEvent.KEYCODE_ENTER) {
 				mSearchListener.onClick(view);
@@ -74,12 +50,10 @@ public class LanguagesSearchActivity extends EthnodroidActivity {
 			}
 			return false;
 		}
-
 	};
 
-	OnClickListener mSearchListener = new OnClickListener() {
+	private final OnClickListener mSearchListener = new OnClickListener() {
 		public void onClick(View v) {
-
 			final ExtractLanguageTask extractLanguageTask = new ExtractLanguageTask(
 					LanguagesSearchActivity.this);
 
@@ -87,7 +61,7 @@ public class LanguagesSearchActivity extends EthnodroidActivity {
 		}
 	};
 
-	OnClickListener mClearListener = new OnClickListener() {
+	private final OnClickListener mClearListener = new OnClickListener() {
 		public void onClick(View v) {
 			mEditor.setText("");
 		}

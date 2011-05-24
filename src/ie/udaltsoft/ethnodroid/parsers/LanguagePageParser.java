@@ -13,6 +13,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 		BLANK, POPULATION, LOCATION, LOCATION_MAP, ALTERNATE_NAMES, DIALECTS, CLASSIFICATION, LANGUAGE_USE, LANGUAGE_DEVELOPMENT, WRITING_SYSTEM, COMMENTS;
 	};
 
+	private State state;
+
 	public static class PatternToStateTuple {
 		Pattern pattern;
 		State state;
@@ -57,6 +59,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 			.compile(getPatternFromLabel("other"));
 	final private Pattern OTHER_COUNTRY_MATCHER = Pattern
 			.compile("\\s*<h4><a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h4>\\s*");
+	final private Pattern SECTION_RESET_MATCHER = Pattern
+			.compile("\\s*<tr VALIGN=\"TOP\">\\s*");
 
 	final private PatternToStateTuple[] patternsStateMap = new PatternToStateTuple[] {
 			new PatternToStateTuple(POPULATION_HDR_MATCHER, State.POPULATION),
@@ -79,9 +83,18 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 	public LanguagePageParser() {
 	}
 
+	private boolean checkSectionEnd(String inputLine) {
+		final Matcher m = SECTION_RESET_MATCHER.matcher(inputLine);
+		if (m.matches()) {
+			state = State.BLANK;
+			return true;
+		}
+		return false;
+	}
+
 	@Override
 	public LanguageParseResults parse(BufferedReader rdr) throws IOException {
-		State state = State.BLANK;
+		state = State.BLANK;
 		String inputLine;
 		Matcher m;
 
@@ -107,9 +120,9 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				m = OTHER_COUNTRY_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country = new LanguageParseResults.CountryInfo();
-					results.getCountries().add(country);
 					country.setCountryIsoCode(m.group(1));
 					country.setCountryNameText(m.group(2));
+					results.getCountries().add(country);
 					break;
 				}
 				for (PatternToStateTuple p2s : patternsStateMap) {
@@ -120,6 +133,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case POPULATION:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setPopulationText(m.group(1));
@@ -127,6 +142,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case LOCATION:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setLocationText(m.group(1));
@@ -134,6 +151,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case LOCATION_MAP:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = LOCATION_MAP_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setLanguageMapURL(m.group(1));
@@ -142,6 +161,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case ALTERNATE_NAMES:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setAlternateNamesText(m.group(1));
@@ -149,6 +170,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case DIALECTS:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setDialectsText(Html.fromHtml(m.group(1))
@@ -157,7 +180,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case CLASSIFICATION:
-				// TODO - link to the family
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setClassificationText(Html.fromHtml(m.group(1))
@@ -166,7 +190,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case LANGUAGE_USE:
-				// TODO - process links
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setLanguageUseText(Html.fromHtml(m.group(1))
@@ -175,6 +200,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case LANGUAGE_DEVELOPMENT:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setLanguageDevelopmentText(m.group(1));
@@ -182,6 +209,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case WRITING_SYSTEM:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country.setWritingSystemText(m.group(1));
@@ -189,9 +218,12 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				break;
 			case COMMENTS:
+				if (checkSectionEnd(inputLine))
+					break;
 				m = TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
-					country.setCommentsText(m.group(1));
+					country.setCommentsText(Html.fromHtml(m.group(1))
+							.toString());
 					state = State.BLANK;
 				}
 				break;

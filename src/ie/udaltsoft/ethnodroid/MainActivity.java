@@ -3,14 +3,11 @@ package ie.udaltsoft.ethnodroid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends EthnodroidActivity {
-
-	static final private int BACK_ID = Menu.FIRST;
 
 	public MainActivity() {
 	}
@@ -36,25 +33,7 @@ public class MainActivity extends EthnodroidActivity {
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-
-		menu.add(0, BACK_ID, 0, R.string.back).setShortcut('1', 'b');
-
-		return true;
-	}
-
-	/**
-	 * Called when a menu item is selected.
-	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case BACK_ID:
-			mBackListener.onClick(null);
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+		return false;
 	}
 
 	private final OnClickListener mActivateLanguagesListener = new OnClickListener() {

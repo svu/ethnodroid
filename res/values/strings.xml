@@ -29,6 +29,8 @@
 		!
 	</string>
 	<string name="search">Search</string>
+	<string name="search_languages">Search languages</string>
+	<string name="search_countries">Search countries</string>
 	<string name="ethnodroid_app">Ethnodroid</string>
 	<string name="country_name_title">Country</string>
 	<string name="population_title">Population</string>
