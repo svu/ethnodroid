@@ -24,15 +24,15 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 	};
 
 	private final static String getPatternFromLabel(String label) {
-		return "\\s*<td>(<i>)?<a href=\"ethno_docs/introduction.asp#" + label
+		return "\\s*<td>(<i>)?<a href=\"ethno_docs/introduction\\.asp#" + label
 				+ "\".+";
 	}
 
 	final private Pattern TD_MATCHER = Pattern.compile("\\s*<td>(.*)</td>\\s*");
 	final private Pattern CODE_MATCHER = Pattern
-			.compile("\\s*<p><a href=\"ethno_docs/introduction.asp#iso_code\".*<a href=\"http://www.sil.org/iso639-3/documentation.asp\\?id=.*\" target=\"_blank\">(.*)</a></p>\\s*");
+			.compile("\\s*<p><a href=\"ethno_docs/introduction\\.asp#iso_code\".*<a href=\"http://www\\.sil\\.org/iso639-3/documentation\\.asp\\?id=.*\" target=\"_blank\">(.*)</a></p>\\s*");
 	final private Pattern COUNTRY_NAME_MATCHER = Pattern
-			.compile("\\s*<h2>.* language of <a HREF=\"show_country.asp\\?name=([A-Z]+)\">(.*)</a></h2>\\s*");
+			.compile("\\s*<h2>.* language of <a HREF=\"show_country\\.asp\\?name=([A-Z]+)\">(.*)</a></h2>\\s*");
 	final private Pattern POPULATION_HDR_MATCHER = Pattern
 			.compile(getPatternFromLabel("population"));
 	final private Pattern LOCATION_HDR_MATCHER = Pattern
@@ -86,14 +86,14 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 		Matcher m;
 
 		final LanguageParseResults results = new LanguageParseResults();
-		CountryInfo country = null;
+		LanguageParseResults.CountryInfo country = null;
 
 		while ((inputLine = rdr.readLine()) != null) {
 			switch (state) {
 			case BLANK:
 				m = COUNTRY_NAME_MATCHER.matcher(inputLine);
 				if (m.matches()) {
-					country = new CountryInfo();
+					country = new LanguageParseResults.CountryInfo();
 					results.getCountries().add(country);
 					country.setCountryIsoCode(m.group(1));
 					country.setCountryNameText(m.group(2));
@@ -106,7 +106,7 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 				}
 				m = OTHER_COUNTRY_MATCHER.matcher(inputLine);
 				if (m.matches()) {
-					country = new CountryInfo();
+					country = new LanguageParseResults.CountryInfo();
 					results.getCountries().add(country);
 					country.setCountryIsoCode(m.group(1));
 					country.setCountryNameText(m.group(2));

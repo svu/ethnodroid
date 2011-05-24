@@ -43,11 +43,13 @@
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
-        </activity><activity android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.LanguageActivity">
+        </activity><activity android:theme="@android:style/Theme.NoTitleBar" android:name="ie.udaltsoft.ethnodroid.LanguageActivity" android:icon="@drawable/ethnobook">
 
         </activity>
-        <activity android:name="ie.udaltsoft.ethnodroid.LanguagesSearchActivity" android:theme="@android:style/Theme.NoTitleBar" ></activity>
-        <activity android:name="ie.udaltsoft.ethnodroid.LineageActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity android:name="ie.udaltsoft.ethnodroid.LanguagesSearchActivity" android:theme="@android:style/Theme.NoTitleBar" android:icon="@drawable/ethnobook"></activity>
+        <activity android:name="ie.udaltsoft.ethnodroid.LineageActivity" android:theme="@android:style/Theme.NoTitleBar" android:icon="@drawable/ethnobook"></activity>
+        <activity android:name="ie.udaltsoft.ethnodroid.CountryActivity" android:theme="@android:style/Theme.NoTitleBar" android:icon="@drawable/ethnobook"></activity>
+        <activity android:name="ie.udaltsoft.ethnodroid.CountriesSearchActivity" android:theme="@android:style/Theme.NoTitleBar" android:icon="@drawable/ethnobook"></activity>
         
 
     </application>

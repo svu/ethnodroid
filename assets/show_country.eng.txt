@@ -1,0 +1,353 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+		<title>Ethnologue report for United Kingdom</title>
+		<meta NAME="Keywords" CONTENT="United Kingdom, Ethnologue, Languages of the World, SIL, Summer Institute of Linguistics">
+		<meta NAME="Description" CONTENT="List of languages of United Kingdom.">
+	
+	<link href="ethno.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<SCRIPT LANGUAGE="javascript">
+<!--
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</SCRIPT>
+<div id="top_banner">
+	<img src="/images/ethno_top.jpg" width="250" height="78" hspace="0" vspace="0" border="0" align="left" usemap="#Map">
+	<map name="Map">
+		<area shape="rect" coords="0,0,260,78" href="/home.asp" alt="Ethnologue.com home">
+	</map>
+</div>
+<div id="logo_bar">
+	
+		<img src="/images/ethno_left_lan.gif" width="132" height="550" border="0">
+	
+</div>
+<div id="nav_top">
+	<style type="text/css">.awmAnchor {position:relative;z-index:0}</style><span id='awmAnchor-ethno_nav' class='awmAnchor'>&nbsp;</span>
+</div>
+
+	<div id="RightColumn">
+		<h4><a href="/show_product.asp?isbn=9781556712166"><img src="/images/ethnogrand15_advert_new.gif" border="0" width="125" alt="Ethnologue: Languages of the World"></a><br>16th edition</h4>
+		<h4><a href="/show_product.asp?isbn=9781556712166"><img src="/images/ethnobook_advert.jpg" border="0" width="131" alt="Ethnologue: Languages of the World"></a>
+			<br>US$ 100.00<br>
+			<a HREF="/store/additem.asp?ETHNO16=1"
+				 ONMOUSEOVER="MM_swapImage('BuyProd','','/images/buy-over.gif',1)"
+				ONMOUSEOUT="MM_swapImgRestore()">
+				<img SRC="/images/buy.gif" NAME="BuyProd" BORDER="0" WIDTH="94"
+				 HEIGHT="22" ALT="Add to cart"></a>
+		</h4>
+		<div align="center">
+			<p><a href="/print.asp">Preview print edition</a></p>
+			<p><hr><a href="/show_catalog.asp?by=new">Most Recent<br>SIL Publications</a><br>
+			<hr align="center" width="75%">
+			<a href="/show_catalog.asp?by=sale">Reduced Price SIL Publications</a></p>
+			<script src="https://seal.verisign.com/getseal?host_name=www.ethnologue.com&size=M&use_flash=YES&use_transparent=NO&lang=en"></script><br />
+	<a href="http://www.verisign.com/ssl/ssl-information-center/" target="_blank" style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">
+	ABOUT SSL CERTIFICATES</a>
+
+		</div>
+	</div>
+
+<div id="main">
+	
+		<span class="breadcrumbs"><a href="home.asp">Ethnologue</a>&nbsp;>&nbsp;<a href="web.asp">Web version</a>&nbsp;>&nbsp;<a href="country_index.asp">Country index</a>&nbsp;>&nbsp;<a href="country_index.asp?place=Europe">Europe</a>&nbsp;>&nbsp;United Kingdom</span>
+		<h1>Languages of United Kingdom</h1>
+		
+		   See <a HREF="show_map.asp?name=GB">language map</a>.<br>
+		
+		   [See also <a HREF="show_country_bibl.asp?name=GB">SIL publications</a> on the languages of United Kingdom.]
+		
+		
+		<blockquote>United Kingdom of Great Britain and Northern Ireland. 60,425,000. National or official languages: English, Welsh, French (regional). Literacy rate: 97%–99%. Immigrant languages: Assyrian Neo-Aramaic (5,000), Bengali (400,000), Eastern Panjabi (471,000), Estonian (14,000), Greek (200,000), Gujarati (140,000), Hakka Chinese (10,000), Hebrew (8,000), Hindi (240), Italian (200,000), Japanese (12,000), Judeo-Iraqi Arabic, Kashmiri (115,000), Kirmanjki, Latvian (12,000), Leeward Caribbean Creole English, Lithuanian, Malayalam (21,000), Maltese (40,900), Mandarin Chinese (12,000), Mirpur Panjabi (25,000), Morisyen (1,000), Moroccan Spoken Arabic (5,800), Northern Kurdish (23,800), Northern Pashto, Parsi (75,000), Portuguese (17,000), Seraiki, Shelta (30,000), Sindhi (25,000), Somali (1,600), Southern Pashto (87,000), Southwestern Caribbean Creole English (170,000), Sylheti (300,000), Tagalog (74,000), Ta’izzi-Adeni Spoken Arabic (29,000), Tamil, Turkish (60,000), Urdu (400,000), Vietnamese (22,000), Western Farsi (12,000), Western Panjabi (103,000), Yoruba (12,000), Yue Chinese (300,000). Also includes languages of Ghana, Nigeria, Guyana, West Indies. Information mainly from B. Comrie 1987; I. Hancock 1974, 1984, 1986; R. McCrum, W. Cran and R. MacNeil 1986; M. Stephens 1976. Blind population: 116,414. Deaf population: Estimates range from 909,000 to 3,524,725 (1998). Deaf institutions: 468 in England, 2 in Northern Ireland, 14 in Scotland, 34 in Wales. The number of individual languages listed for United Kingdom is 16. Of those, 12 are living languages, 2 are second languages without mother-tongue speakers, and 2 have no known speakers.<br></blockquote>
+		
+		
+			<table CELLSPACING="12">
+			
+					<tr VALIGN="TOP"><td WIDTH="25%">Angloromani</td>
+						<td WIDTH="75%"><p>[rme]
+						90,000 in United Kingdom (1990 I. Hancock). Population total all countries: 202,900.&nbsp;England, Scotland, Wales. Also in Australia, South Africa, United States.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> English Romani, Pogadi Chib, Posh ‘N’ Posh, Romani English, Romanichal.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Not inherently intelligible with Welsh Romani [<a href="show_language.asp?code=rmw">rmw</a>], Traveller Swedish [<a href="show_language.asp?code=rmu">rmu</a>], Traveller Norwegian [<a href="show_language.asp?code=rmg">rmg</a>], or Traveller Danish [<a href="show_language.asp?code=rmd">rmd</a>]. Grammar English with heavy Romani lexical borrowing. Many dialects.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Mixed language, English-Romani&nbsp;
+						
+						<br><a HREF="show_language.asp?code=rme">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">British Sign Language</td>
+						<td WIDTH="75%"><p>[bfi]
+						40,000 L1 users (1984 M. Deuchar), out of 909,000 deaf; majority probably have some degree of sign language competence (Deuchar 1977).&nbsp;England, Northern Ireland, Scotland.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> BSL.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Not inherently intelligible to users of American Sign Language [<a href="show_language.asp?code=ase">ase</a>]. Deaf community cohesive, so communication good despite regional differences. Signing varies along a continuum from something usually called “Signed English” (which draws on BSL vocabulary but uses grammatical structure like spoken English) to natural BSL. Different styles of signing used in different situations, and signers vary in terms of how much of the range of signing styles they control.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Deaf sign language&nbsp;
+						
+						<br><a HREF="show_language.asp?code=bfi">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Cornish</td>
+						<td WIDTH="75%"><p>[cor]
+						Some under 20 years are L1 speakers. 500 use Cornish; about 100 others who speak fluently (2003). Ethnic population: 468,425 (1991 census).&nbsp;Southwest, Duchy of Cornwall.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Curnoack, Kernewek, Kernowek.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Related to Breton [<a href="show_language.asp?code=bre">bre</a>], Welsh [<a href="show_language.asp?code=cym">cym</a>], Gaulish (extinct), Irish Gaelic [<a href="show_language.asp?code=gle">gle</a>], Manx Gaelic [<a href="show_language.asp?code=glv">glv</a>] (extinct), Scottish Gaelic [<a href="show_language.asp?code=gla">gla</a>].&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Brythonic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=cor">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">English</td>
+						<td WIDTH="75%"><p>[eng]
+						58,100,000 in United Kingdom (2005 Crystal). Population total all countries: 328,008,138.&nbsp;Also in American Samoa, Andorra, Anguilla, Antigua and Barbuda, Aruba, Australia, Bahamas, Bahrain, Barbados, Belize, Bermuda, Botswana, British Indian Ocean Territory, British Virgin Islands, Brunei, Cambodia, Cameroon, Canada, Cayman Islands, Chile, China, Cook Islands, Denmark, Dominica, Dominican Republic, Ecuador, Eritrea, Ethiopia, Falkland Islands, Fiji, Finland, Gambia, Germany, Ghana, Gibraltar, Greece, Grenada, Guadeloupe, Guam, Guyana, Honduras, India, Ireland, Israel, Italy, Jamaica, Japan, Kenya, Kiribati, South Korea, Lebanon, Lesotho, Liberia, Libya, Madagascar, Malawi, Malaysia (Peninsular), Malta, Marshall Islands, Mauritius, Mexico, Micronesia, Montserrat, Mozambique, Namibia, Nauru, Nepal, Netherlands Antilles, New Zealand, Nigeria, Niue, Norfolk Island, Northern Mariana Islands, Norway, Pakistan, Palau, Papua New Guinea, Philippines, Pitcairn, Puerto Rico, Rwanda, Saint Helena, Saint Kitts and Nevis, Saint Lucia, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, Samoa, Saudi Arabia, Seychelles, Sierra Leone, Singapore, Solomon Islands, Somalia, South Africa, Sri Lanka, Suriname, Swaziland, Switzerland, Tanzania, Tokelau, Tonga, Trinidad and Tobago, Turks and Caicos Islands, Uganda, United Arab Emirates, United States, U.S. Virgin Islands, Vanuatu, Venezuela, Zambia, Zimbabwe.
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Cockney, Scouse, Geordie, West Country, East Anglia, Birmingham (Brummy, Brummie), South Wales, Edinburgh, Belfast, Cornwall, Cumberland, Central Cumberland, Devonshire, East Devonshire, Dorset, Durham, Bolton Lancashire, North Lancashire, Radcliffe Lancashire, Northumberland, Norfolk, Newcastle Northumberland, Tyneside Northumberland, Lowland Scottish, Somerset, Sussex, Westmorland, North Wiltshire, Craven Yorkshire, North Yorkshire, Sheffield Yorkshire, West Yorkshire. Many local English varieties around the world. Lexical similarity: 60% with German, 27% with French, 24% with Russian.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Germanic, West, English&nbsp;
+						
+						<br><a HREF="show_language.asp?code=eng">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">French</td>
+						<td WIDTH="75%"><p>[fra]
+						14,000 in United Kingdom (1976 Stephens).&nbsp;Channel Islands.
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Jerriais, Dgernesiais.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Italic, Romance, Italo-Western, Western, Gallo-Iberian, Gallo-Romance, Gallo-Rhaetian, Oïl, French&nbsp;
+						
+						<br><a HREF="show_language.asp?code=fra">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Gaelic, Hiberno-Scottish</td>
+						<td WIDTH="75%"><p>[ghc]
+						Extinct.&nbsp;Ireland and Scotland.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Gaoidhealg, Hiberno-Scottish Classical Common Gaelic.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Goidelic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=ghc">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Gaelic, Irish</td>
+						<td WIDTH="75%"><p>[gle]
+						95,000 in United Kingdom (2004).&nbsp;Northern Ireland, Fermanagh and Armagh counties, Belfast.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Erse, Gaeilge, Irish.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Goidelic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=gle">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Gaelic, Scottish</td>
+						<td WIDTH="75%"><p>[gla]
+						58,700 in United Kingdom (2003 census). Population total all countries: 66,780.&nbsp;North and central counties of Ross, islands of Hebrides and Skye, Glasgow. Also in Australia, Canada, United States.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> “Erse” , Gaelic, Scots Gaelic.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> The Gaelic of the Bible is based on Perthshire dialect of 1801, somewhat distant from today’s spoken dialects.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Goidelic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=gla">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Manx</td>
+						<td WIDTH="75%"><p>[glv]
+						Ethnic population: On the Isle of Man: 77,000 residents (1998 United Nations).&nbsp;Isle of Man.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Gaelg, Gailck, Manx Gaelic.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Similar to Scottish Gaelic [<a href="show_language.asp?code=gla">gla</a>]. Part of British Isles, a Crown Dependency, with its own Parliament, laws, currency, and taxation The United Kingdom represents the Isle of Man at the United Nations.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Goidelic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=glv">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Old Kentish Sign Language</td>
+						<td WIDTH="75%"><p>[okl]
+						Extinct.&nbsp;Kent.
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Deaf sign language&nbsp;
+						
+						<br><a HREF="show_language.asp?code=okl">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Polari</td>
+						<td WIDTH="75%"><p>[pld]
+						&nbsp;
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Palari, Palarie, Parlare, Parlary, Parlyaree.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Unclassified&nbsp;
+						
+						<br><a HREF="show_language.asp?code=pld">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Romani, Vlax</td>
+						<td WIDTH="75%"><p>[rmy]
+						4,100 in United Kingdom (2004).&nbsp;
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Rom, Romenes, Tsigane.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Kalderash, Lovari.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Indo-Iranian, Indo-Aryan, Central zone, Romani, Vlax&nbsp;
+						
+						<br><a HREF="show_language.asp?code=rmy">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Romani, Welsh</td>
+						<td WIDTH="75%"><p>[rmw]
+						&nbsp;England and Wales.
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Not inherently intelligible with Angloromani [<a href="show_language.asp?code=rme">rme</a>].&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Indo-Iranian, Indo-Aryan, Central zone, Romani, Northern&nbsp;
+						
+						<br><a HREF="show_language.asp?code=rmw">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Scots</td>
+						<td WIDTH="75%"><p>[sco]
+						100,000 in United Kingdom (1999 B. Kay). 60,000 in Lallans, 30,000 in Doric, 10,000 in Ulster. Population total all countries: 200,000.&nbsp;Scotland except highlands; lowlands: Aberdeen to Ayrshire; Northern Ireland. Doric in northeast Scotland; Lallans in South Scotland lowlands; Ulster in Northern Ireland. Also in Ireland.
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Doric, Lallans, Ulster. Difficult intelligibility among dialects. Northern Scots on the Scottish Islands is considered by some a different language (Shetlandic or Orcadian). Lallans is main literary dialect. Ulster Scots has a development group. Scots is most similar to English and Frisian.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Germanic, West, English&nbsp;
+						
+						<br><a HREF="show_language.asp?code=sco">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Traveller Scottish</td>
+						<td WIDTH="75%"><p>[trl]
+						4,000 in United Kingdom.&nbsp;Also in Australia, United States.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Scottish Cant, Scottish Traveller Cant.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Unclassified&nbsp;
+						
+						<br><a HREF="show_language.asp?code=trl">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+					<tr VALIGN="TOP"><td WIDTH="25%">Welsh</td>
+						<td WIDTH="75%"><p>[cym]
+						508,000 in United Kingdom (1991 census). 575,102 in 1971; 32,700 monolinguals, 542,402 bilinguals (1971 census). Population total all countries: 537,870.&nbsp;North, west, south Wales. Also in Argentina, Canada, United States.
+							<i><a href="ethno_docs/introduction.asp#alt_names" title="Other names and spellings of names used to refer to this language. Pejorative names enclosed in quotes and labeled pej.">Alternate names</a>:</i> Cymraeg.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#dialect" title="Information about the names of dialects of the language, including information on lexical similarity and intelligibility with other varieties if available">Dialects</a>:</i> Northern Welsh, Southern Welsh, Patagonian Welsh.&nbsp;
+						
+							<i><a href="ethno_docs/introduction.asp#affiliation" title="Linguistic classification information from largest, more inclusive, grouping to smallest">Classification</a>:</i> Indo-European, Celtic, Insular, Brythonic&nbsp;
+						
+						<br><a HREF="show_language.asp?code=cym">More information.</a>
+						</p>
+						</td>
+					</tr>
+				
+			</table>
+		
+	<div id="footer">
+		<HR>
+
+<div id="footercite">
+<p>This web edition of the Ethnologue contains all the content of the <a href="/print.asp">print edition</a> and may be cited as:<br><strong>Lewis, M. Paul (ed.),  2009.  Ethnologue: Languages of the World, Sixteenth edition. Dallas, Tex.: SIL International. Online version:&nbsp;<a href="http://www.ethnologue.com/">http://www.ethnologue.com/</a>.</strong></p></div>
+
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="012587068058456009639:lqiknxiamcc" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script>
+<script type="text/javascript" src="http://www.google.com/coop/cse/t13n?form=cse-search-box&t13n_langs=en"></script>
+
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+
+<p>&nbsp;&nbsp;<A HREF="/web.asp">Ethnologue: Web</A> &nbsp;|&nbsp;
+<A HREF="/print.asp">Ethnologue: Print</A> &nbsp;|&nbsp;
+<A HREF="/bibliography.asp">Bibliography</A> &nbsp;|&nbsp;
+<A HREF="/bookstore.asp">Publications Catalog</A> &nbsp;|&nbsp;
+<A HREF="/tools.asp">Software</A> &nbsp;<BR>&nbsp;
+<A HREF="/info.asp">Who we are</A> &nbsp;|&nbsp;
+<A HREF="/store/cart.asp">Shopping cart</A> &nbsp;|&nbsp;
+<A HREF="/site_search.asp">Site search</A> &nbsp;|&nbsp;
+<A HREF="/site_map.asp">Site map</A> &nbsp;|&nbsp;
+<A HREF="/home.asp">Home</A> &nbsp;
+</p>
+<p>
+<SCRIPT LANGUAGE="javascript">
+<!--
+document.write("<STRONG>URL:</STRONG> <EM><A HREF=" +document.location+ ">" +document.location+ "</A></EM><br>")
+// -->
+</SCRIPT>
+
+<STRONG><A HREF="/info.asp#contact">Contact us</A></STRONG></p>
+<div class="copyright">
+	<p><a href="/policies.asp#fair_use_text">Terms of Use</a>&nbsp;|&nbsp;<a href="/policies.asp#privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/policies.asp#links">External links</a><br>
+	Copyright &copy; 2011 <a href="http://www.sil.org/" target="_blank">SIL International</a> (formerly known as the Summer Institute of Linguistics)</p>
+</div>
+<!-- DO NOT MOVE!-->
+<!-- ******** BEGIN ALLWEBMENUS CODE FOR ethno_nav ******** -->
+<img name='awmMenuPathImg-ethno_nav' id='awmMenuPathImg-ethno_nav' src='/menu/awmmenupath.gif' alt=''><script type='text/javascript'>var MenuLinkedBy='AllWebMenus [2]', awmBN='524'; awmAltUrl='';</script><script src='/menu/ethno_nav.js' language='JavaScript1.2' type='text/javascript'></script><script type='text/javascript'>awmBuildMenu();</script>
+<!-- ******** END ALLWEBMENUS CODE FOR ethno_nav ******** -->
+
+	</div>
+</div>
+</body>
+</html>

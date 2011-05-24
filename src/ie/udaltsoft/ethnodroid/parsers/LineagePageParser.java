@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class LineagePageParser extends WebPageParser<LineageParseResults> {
 
 	final private Pattern DATA_MATCHER = Pattern
-			.compile("\\s*<a HREF=\"show_family.asp\\?subid=(.+)\">(.+)</a>&nbsp;\\((\\d+)\\)\\s*");
+			.compile("\\s*<a HREF=\"show_family\\.asp\\?subid=(.+)\">(.+)</a>&nbsp;\\((\\d+)\\)\\s*");
 
 	public LineagePageParser() {
 	}
@@ -19,12 +19,12 @@ public class LineagePageParser extends WebPageParser<LineageParseResults> {
 		Matcher m;
 
 		final LineageParseResults results = new LineageParseResults();
-		FamilyInfo family = null;
+		LineageParseResults.FamilyInfo family = null;
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = DATA_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				family = new FamilyInfo();
+				family = new LineageParseResults.FamilyInfo();
 				family.setCode(m.group(1));
 				family.setName(m.group(2));
 				family.setNumberOfLanguages(Integer.parseInt(m.group(3)));

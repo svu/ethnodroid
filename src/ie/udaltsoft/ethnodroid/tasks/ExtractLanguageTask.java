@@ -3,14 +3,13 @@ package ie.udaltsoft.ethnodroid.tasks;
 import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.LanguageActivity;
 import ie.udaltsoft.ethnodroid.R;
-import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
 import ie.udaltsoft.ethnodroid.parsers.LanguagePageParser;
 import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
 
-public final class SearchTask extends
+public final class ExtractLanguageTask extends
 		LoadingTask<LanguageParseResults, LanguagePageParser> {
 
-	public SearchTask(EthnodroidActivity activity) {
+	public ExtractLanguageTask(EthnodroidActivity activity) {
 		super(activity, "show_language.asp?code=", "show_language",
 				LanguageActivity.class);
 	}
@@ -28,7 +27,8 @@ public final class SearchTask extends
 			return false;
 		}
 
-		final CountryInfo ci = results.getCountries().get(0);
+		final LanguageParseResults.CountryInfo ci = results.getCountries().get(
+				0);
 
 		if (ci.getLanguageIsoCode() == null) {
 			activity.displayErrorMessage(R.string.no_language_info_found);

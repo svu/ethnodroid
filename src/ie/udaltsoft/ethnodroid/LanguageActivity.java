@@ -1,11 +1,12 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
 import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
 import ie.udaltsoft.ethnodroid.tasks.ClassificationTask;
+import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 
 public class LanguageActivity extends EthnodroidActivity {
 
-	private CountryInfo displayedCountryInfo;
+	private LanguageParseResults.CountryInfo displayedCountryInfo;
 
 	public LanguageActivity() {
 	}
@@ -35,6 +36,9 @@ public class LanguageActivity extends EthnodroidActivity {
 		findViewById(R.id.classificationText).setOnClickListener(
 				mClassificationListener);
 
+		findViewById(R.id.countryNameText).setOnClickListener(
+				mCountryNameListener);
+
 		resetFields();
 
 		final LanguageParseResults results = (LanguageParseResults) getIntent()
@@ -45,7 +49,7 @@ public class LanguageActivity extends EthnodroidActivity {
 
 		final Spinner languageCountriesList = ((Spinner) findViewById(R.id.languageCountriesList));
 		if (results.getCountries().size() > 1) {
-			final ArrayAdapter<CountryInfo> lcla = new ArrayAdapter<CountryInfo>(
+			final ArrayAdapter<LanguageParseResults.CountryInfo> lcla = new ArrayAdapter<LanguageParseResults.CountryInfo>(
 					this, android.R.layout.simple_spinner_dropdown_item,
 					results.getCountries());
 			languageCountriesList.setAdapter(lcla);
@@ -75,7 +79,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		((TextView) findViewById(R.id.commentsText)).setText("");
 	}
 
-	private OnClickListener mLanguageMapListener = new OnClickListener() {
+	private final OnClickListener mLanguageMapListener = new OnClickListener() {
 		public void onClick(View v) {
 			final Object url = findViewById(R.id.languageMapText).getTag();
 			if (url == null)
@@ -88,7 +92,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private OnClickListener mClassificationListener = new OnClickListener() {
+	private final OnClickListener mClassificationListener = new OnClickListener() {
 		public void onClick(View v) {
 
 			final ClassificationTask extractClassificationTask = new ClassificationTask(
@@ -99,11 +103,11 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private OnItemSelectedListener mCountryListListener = new OnItemSelectedListener() {
+	private final OnItemSelectedListener mCountryListListener = new OnItemSelectedListener() {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			final CountryInfo country = (CountryInfo) parent
+			final LanguageParseResults.CountryInfo country = (LanguageParseResults.CountryInfo) parent
 					.getItemAtPosition(pos);
 			if (country != null)
 				displayCountry(country);
@@ -111,6 +115,20 @@ public class LanguageActivity extends EthnodroidActivity {
 
 		public void onNothingSelected(AdapterView<?> parent) {
 			resetFields();
+		}
+	};
+
+	private final OnClickListener mCountryNameListener = new OnClickListener() {
+
+		public void onClick(View view) {
+			final String countryIsoCode = (String) view.getTag();
+
+			if (countryIsoCode != null) {
+				final ExtractCountryTask extractCountryTask = new ExtractCountryTask(
+						LanguageActivity.this);
+
+				extractCountryTask.execute(countryIsoCode);
+			}
 		}
 	};
 
@@ -127,7 +145,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	}
 
-	public void displayCountry(CountryInfo ci) {
+	public void displayCountry(LanguageParseResults.CountryInfo ci) {
 		displayedCountryInfo = ci;
 
 		populateRow(R.id.languageIsoCodeRow, R.id.languageIsoCodeText,
@@ -136,6 +154,9 @@ public class LanguageActivity extends EthnodroidActivity {
 				ci.getCountryIsoCode());
 		populateRow(R.id.countryNameRow, R.id.countryNameText,
 				ci.getCountryNameText());
+
+		findViewById(R.id.countryNameText).setTag(ci.getCountryIsoCode());
+
 		populateRow(R.id.populationRow, R.id.populationText,
 				ci.getPopulationText());
 		populateRow(R.id.regionRow, R.id.regionText, ci.getLocationText());
@@ -155,6 +176,7 @@ public class LanguageActivity extends EthnodroidActivity {
 				ci.getLanguageDevelopmentText());
 		populateRow(R.id.writingSystemRow, R.id.writingSystemText,
 				ci.getWritingSystemText());
-		populateRow(R.id.commentsRow, R.id.commentsText, ci.getCommentsText());
+		populateRow(R.id.commentsRow, R.id.commentsText,
+				Html.fromHtml(ci.getCommentsText()).toString());
 	}
 }

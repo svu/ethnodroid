@@ -26,6 +26,8 @@ public class MainActivity extends EthnodroidActivity {
 
 		((Button) findViewById(R.id.activateLanguagesButton))
 				.setOnClickListener(mActivateLanguagesListener);
+		((Button) findViewById(R.id.activateCountriesButton))
+				.setOnClickListener(mActivateCountriesListener);
 
 	}
 
@@ -55,7 +57,7 @@ public class MainActivity extends EthnodroidActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	OnClickListener mActivateLanguagesListener = new OnClickListener() {
+	private final OnClickListener mActivateLanguagesListener = new OnClickListener() {
 		public void onClick(View v) {
 			final Intent i = new Intent(MainActivity.this,
 					LanguagesSearchActivity.class);
@@ -63,9 +65,14 @@ public class MainActivity extends EthnodroidActivity {
 		}
 	};
 
-	/**
-	 * A call-back for when the user presses the back button.
-	 */
+	private final OnClickListener mActivateCountriesListener = new OnClickListener() {
+		public void onClick(View v) {
+			final Intent i = new Intent(MainActivity.this,
+					CountriesSearchActivity.class);
+			startActivity(i);
+		}
+	};
+
 	OnClickListener mBackListener = new OnClickListener() {
 		public void onClick(View v) {
 			finish();

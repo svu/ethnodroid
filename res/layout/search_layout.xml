@@ -35,8 +35,11 @@
          of drawable/semi_black-->
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
     <TextView android:text="TextView" style="@style/ErrorMessage" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/errorMessage"></TextView>
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/lineageTitle" android:text="@string/linguistic_lineage_title" style="@style/InfoItemTitle"></TextView>
-    <ListView android:layout_width="match_parent" android:layout_height="fill_parent" android:id="@+id/classificationStack"></ListView>
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:drawableRight="@android:drawable/ic_menu_search" android:id="@+id/searchPattern"></EditText>
+    <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/semi_black">
+        <Button android:paddingRight="3dip" android:layout_height="wrap_content" android:drawableLeft="@android:drawable/ic_menu_search" android:text="@string/search" style="@style/ActionButton" android:paddingLeft="12dip" android:layout_width="0px" android:id="@+id/search" android:layout_weight="1"></Button>
+        <Button android:paddingRight="12dip" android:layout_height="wrap_content" android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel" android:text="@string/clear" style="@style/ActionButton" android:paddingLeft="3dip" android:layout_width="0px" android:id="@+id/clear" android:layout_weight="1"></Button>
+    </LinearLayout>
 
 </LinearLayout>
 

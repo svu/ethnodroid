@@ -1,6 +1,6 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
+import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -11,14 +11,14 @@ import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class LanguagesSearchActivity extends EthnodroidActivity {
+public class CountriesSearchActivity extends EthnodroidActivity {
 
 	static final private int SEARCH_ID = Menu.FIRST;
 	static final private int CLEAR_ID = Menu.FIRST + 1;
 
 	private EditText mEditor;
 
-	public LanguagesSearchActivity() {
+	public CountriesSearchActivity() {
 	}
 
 	@Override
@@ -80,10 +80,11 @@ public class LanguagesSearchActivity extends EthnodroidActivity {
 	OnClickListener mSearchListener = new OnClickListener() {
 		public void onClick(View v) {
 
-			final ExtractLanguageTask extractLanguageTask = new ExtractLanguageTask(
-					LanguagesSearchActivity.this);
+			final ExtractCountryTask extractCountryTask = new ExtractCountryTask(
+					CountriesSearchActivity.this);
 
-			extractLanguageTask.execute(mEditor.getText().toString());
+			extractCountryTask.execute(mEditor.getText().toString()
+					.toUpperCase());
 		}
 	};
 
