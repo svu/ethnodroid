@@ -1,23 +1,10 @@
 package ie.udaltsoft.ethnodroid;
 
 import ie.udaltsoft.ethnodroid.parsers.CountryInfo;
-import ie.udaltsoft.ethnodroid.parsers.FamilyInfo;
 import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
-import ie.udaltsoft.ethnodroid.parsers.LineagePageParser;
-import ie.udaltsoft.ethnodroid.parsers.LineageParseResults;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.Charset;
-
-import android.app.ProgressDialog;
+import ie.udaltsoft.ethnodroid.tasks.ClassificationTask;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -104,85 +91,10 @@ public class LanguageActivity extends EthnodroidActivity {
 	private OnClickListener mClassificationListener = new OnClickListener() {
 		public void onClick(View v) {
 
-			final AsyncTask<String, Integer, String> extractLanguageTask = new AsyncTask<String, Integer, String>() {
-				private ProgressDialog dialog;
-				private LineageParseResults results;
+			final ClassificationTask extractClassificationTask = new ClassificationTask(
+					LanguageActivity.this);
 
-				@Override
-				protected void onPreExecute() {
-					hideErrorMessage();
-
-					dialog = new ProgressDialog(LanguageActivity.this);
-					dialog.setMessage(getText(R.string.loading));
-					dialog.setIndeterminate(true);
-					dialog.setCancelable(false);
-					dialog.show();
-				}
-
-				@Override
-				protected String doInBackground(String... params) {
-					HttpURLConnection urlConnection = null;
-					try {
-						final InputStream is;
-						final BufferedReader rdr;
-						if (isRemoteLoading()) {
-							final URL url = new URL(
-									"http://www.ethnologue.com/show_lang_family.asp?code="
-											+ params[0]);
-
-							urlConnection = (HttpURLConnection) url
-									.openConnection();
-							is = urlConnection.getInputStream();
-							rdr = new BufferedReader(new InputStreamReader(is));
-						} else {
-							final AssetManager am = getAssets();
-							is = am.open("show_lang_family.eng.txt");
-							rdr = new BufferedReader(new InputStreamReader(is,
-									Charset.forName("windows-1252")));
-						}
-
-						final LineagePageParser lineagePageParser = new LineagePageParser();
-						results = lineagePageParser.parse(rdr);
-
-					} catch (Exception ex) {
-						return ex.toString();
-					} finally {
-						if (urlConnection != null)
-							urlConnection.disconnect();
-					}
-					return null;
-				}
-
-				@Override
-				protected void onPostExecute(String result) {
-					dialog.hide();
-
-					if (result != null) {
-						displayErrorMessage(result);
-						return;
-					}
-
-					if (results == null || results.getFamilies() == null
-							|| results.getFamilies().size() == 0) {
-						displayErrorMessage(getText(R.string.no_language_info_found));
-						return;
-					}
-
-					final FamilyInfo fi = results.getFamilies().get(0);
-
-					if (fi.getCode() == null) {
-						displayErrorMessage(getText(R.string.no_language_info_found));
-						return;
-					}
-
-					final Intent i = new Intent(LanguageActivity.this,
-							LineageActivity.class);
-					i.putExtra("results", results);
-					startActivity(i);
-				}
-			};
-
-			extractLanguageTask.execute(displayedCountryInfo
+			extractClassificationTask.execute(displayedCountryInfo
 					.getLanguageIsoCode());
 		}
 	};
@@ -209,9 +121,10 @@ public class LanguageActivity extends EthnodroidActivity {
 	private void populateRow(int rowId, int textId, String textValue) {
 		if (textValue == null)
 			findViewById(rowId).setVisibility(View.GONE);
-		else
+		else {
+			findViewById(rowId).setVisibility(View.VISIBLE);
 			setFormFieldText(textId, textValue);
-
+		}
 	}
 
 	public void displayCountry(CountryInfo ci) {

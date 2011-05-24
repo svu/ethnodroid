@@ -154,6 +154,7 @@ public class LanguagePageParser {
 							.toString());
 					state = State.BLANK;
 				}
+				break;
 			case CLASSIFICATION:
 				// TODO - link to the family
 				m = TD_MATCHER.matcher(inputLine);
