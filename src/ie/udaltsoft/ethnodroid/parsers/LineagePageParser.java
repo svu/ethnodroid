@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LineagePageParser {
+public class LineagePageParser extends WebPageParser<LineageParseResults> {
 
 	final private Pattern DATA_MATCHER = Pattern
 			.compile("\\s*<a HREF=\"show_family.asp\\?subid=(.+)\">(.+)</a>&nbsp;\\((\\d+)\\)\\s*");
@@ -13,6 +13,7 @@ public class LineagePageParser {
 	public LineagePageParser() {
 	}
 
+	@Override
 	public LineageParseResults parse(BufferedReader rdr) throws IOException {
 		String inputLine;
 		Matcher m;

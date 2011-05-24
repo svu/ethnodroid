@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 import android.text.Html;
 
-public class LanguagePageParser {
+public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 
 	public static enum State {
 		BLANK, POPULATION, LOCATION, LOCATION_MAP, ALTERNATE_NAMES, DIALECTS, CLASSIFICATION, LANGUAGE_USE, LANGUAGE_DEVELOPMENT, WRITING_SYSTEM, COMMENTS;
@@ -79,6 +79,7 @@ public class LanguagePageParser {
 	public LanguagePageParser() {
 	}
 
+	@Override
 	public LanguageParseResults parse(BufferedReader rdr) throws IOException {
 		State state = State.BLANK;
 		String inputLine;
