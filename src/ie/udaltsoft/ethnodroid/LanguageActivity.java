@@ -71,11 +71,6 @@ public class LanguageActivity extends EthnodroidActivity {
 		hideErrorMessage();
 	}
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-	}
-
 	private void resetFields() {
 		((TextView) findViewById(R.id.languageIsoCodeText)).setText("");
 		((TextView) findViewById(R.id.countryIsoCodeText)).setText("");
@@ -106,16 +101,6 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private void hideErrorMessage() {
-		findViewById(R.id.errorMessage).setVisibility(View.GONE);
-	}
-
-	private void displayErrorMessage(CharSequence message) {
-		TextView errorMessage = (TextView) findViewById(R.id.errorMessage);
-		errorMessage.setVisibility(View.VISIBLE);
-		errorMessage.setText(message);
-	}
-
 	private OnClickListener mClassificationListener = new OnClickListener() {
 		public void onClick(View v) {
 
@@ -140,7 +125,7 @@ public class LanguageActivity extends EthnodroidActivity {
 					try {
 						final InputStream is;
 						final BufferedReader rdr;
-						if (isRemote) {
+						if (isRemoteLoading()) {
 							final URL url = new URL(
 									"http://www.ethnologue.com/show_lang_family.asp?code="
 											+ params[0]);

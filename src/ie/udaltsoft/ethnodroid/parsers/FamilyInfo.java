@@ -33,4 +33,8 @@ public class FamilyInfo implements Serializable {
 	public int getNumberOfLanguages() {
 		return numberOfLanguages;
 	}
+
+	public String toString() {
+		return name + " (" + numberOfLanguages + ")";
+	}
 }

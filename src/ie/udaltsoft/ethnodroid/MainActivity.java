@@ -30,14 +30,6 @@ public class MainActivity extends EthnodroidActivity {
 	}
 
 	/**
-	 * Called when the activity is about to start interacting with the user.
-	 */
-	@Override
-	protected void onResume() {
-		super.onResume();
-	}
-
-	/**
 	 * Called when your activity's options menu needs to be created.
 	 */
 	@Override

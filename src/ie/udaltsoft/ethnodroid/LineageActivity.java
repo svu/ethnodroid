@@ -1,7 +1,11 @@
 package ie.udaltsoft.ethnodroid;
 
+import ie.udaltsoft.ethnodroid.parsers.FamilyInfo;
+import ie.udaltsoft.ethnodroid.parsers.LineageParseResults;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class LineageActivity extends EthnodroidActivity {
 
@@ -12,20 +16,21 @@ public class LineageActivity extends EthnodroidActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.language_layout);
+		setContentView(R.layout.lineage_layout);
 		setBrowserLink();
 
-		((ImageView) findViewById(R.id.topImage))
-				.setOnClickListener(new BrowseEthnologueClickListener(this));
+		final LineageParseResults results = (LineageParseResults) getIntent()
+				.getSerializableExtra(RESULTS_EXTRAS);
 
-		resetFields();
-	}
+		final View lineageList = findViewById(R.id.lineageList);
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-	}
-
-	private void resetFields() {
+		if (results == null) {
+			lineageList.setVisibility(View.GONE);
+			this.displayErrorMessage(R.string.no_language_family_info_found);
+		} else {
+			((ListView) lineageList).setAdapter(new ArrayAdapter<FamilyInfo>(
+					this, android.R.layout.simple_list_item_1,
+					results.getFamilies()));
+		}
 	}
 }
