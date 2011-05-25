@@ -38,16 +38,18 @@ public class MainActivity extends EthnodroidActivity {
 
 	private final OnClickListener mActivateLanguagesListener = new OnClickListener() {
 		public void onClick(View v) {
-			final Intent i = new Intent(MainActivity.this,
-					LanguagesSearchActivity.class);
+			final Intent i = new Intent(MainActivity.this, SearchActivity.class);
+			i.putExtra(SearchActivity.SEARCH_TYPE,
+					SearchActivity.SearchType.LANGUAGE);
 			startActivity(i);
 		}
 	};
 
 	private final OnClickListener mActivateCountriesListener = new OnClickListener() {
 		public void onClick(View v) {
-			final Intent i = new Intent(MainActivity.this,
-					CountriesSearchActivity.class);
+			final Intent i = new Intent(MainActivity.this, SearchActivity.class);
+			i.putExtra(SearchActivity.SEARCH_TYPE,
+					SearchActivity.SearchType.COUNTRY);
 			startActivity(i);
 		}
 	};

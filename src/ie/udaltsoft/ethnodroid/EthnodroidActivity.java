@@ -70,12 +70,18 @@ public class EthnodroidActivity extends Activity {
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		final Intent i = new Intent(EthnodroidActivity.this,
+				SearchActivity.class);
 		switch (item.getItemId()) {
 		case SEARCH_LANGUAGES_ID:
-			startActivity(new Intent(this, LanguagesSearchActivity.class));
+			i.putExtra(SearchActivity.SEARCH_TYPE,
+					SearchActivity.SearchType.LANGUAGE);
+			startActivity(i);
 			return true;
 		case SEARCH_COUNTRIES_ID:
-			startActivity(new Intent(this, CountriesSearchActivity.class));
+			i.putExtra(SearchActivity.SEARCH_TYPE,
+					SearchActivity.SearchType.COUNTRY);
+			startActivity(i);
 			return true;
 		}
 
