@@ -48,7 +48,6 @@ public class SearchActivity extends EthnodroidActivity {
 		((Button) findViewById(R.id.clear)).setOnClickListener(mClearListener);
 		mEditor.setOnKeyListener(mSearchKeyListener);
 		mEditor.setText("");
-		hideErrorMessage();
 	}
 
 	@Override

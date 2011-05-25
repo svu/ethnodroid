@@ -34,7 +34,6 @@
          give it a custom background; see colors.xml for the definition
          of drawable/semi_black-->
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
-    <TextView android:text="TextView" style="@style/ErrorMessage" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/errorMessage"></TextView>
     <Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languageCountriesList"></Spinner>
     <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/languageScrollView" android:scrollbars="vertical">
     <LinearLayout

@@ -32,7 +32,6 @@ public class CountryActivity extends EthnodroidActivity {
 			findViewById(R.id.countryNameRow).setVisibility(View.GONE);
 			displayErrorMessage(R.string.no_country_info_found);
 		} else {
-			hideErrorMessage();
 			((TextView) findViewById(R.id.countryNameText)).setText(results
 					.getCountryName());
 			languageList

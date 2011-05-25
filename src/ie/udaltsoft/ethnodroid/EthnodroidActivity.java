@@ -1,6 +1,8 @@
 package ie.udaltsoft.ethnodroid;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.Menu;
@@ -8,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class EthnodroidActivity extends Activity {
 
@@ -35,14 +36,20 @@ public class EthnodroidActivity extends Activity {
 				.setOnClickListener(mBrowseEthnologueClickListener);
 	}
 
-	public void hideErrorMessage() {
-		findViewById(R.id.errorMessage).setVisibility(View.GONE);
-	}
-
 	public void displayErrorMessage(CharSequence message) {
-		TextView errorMessage = (TextView) findViewById(R.id.errorMessage);
-		errorMessage.setVisibility(View.VISIBLE);
-		errorMessage.setText(message);
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(message);
+		builder.setNeutralButton(R.string.close,
+				new DialogInterface.OnClickListener() {
+
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+
+				});
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 
 	public void displayErrorMessage(int msgId) {

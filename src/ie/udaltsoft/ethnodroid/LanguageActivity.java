@@ -57,8 +57,6 @@ public class LanguageActivity extends EthnodroidActivity {
 		} else {
 			languageCountriesList.setVisibility(View.GONE);
 		}
-
-		hideErrorMessage();
 	}
 
 	private void resetFields() {

@@ -41,8 +41,6 @@ public abstract class LoadingTask<ResultsType extends WebPageParserResults, Pars
 
 	@Override
 	protected void onPreExecute() {
-		activity.hideErrorMessage();
-
 		dialog = new ProgressDialog(activity);
 		dialog.setMessage(activity.getText(R.string.loading));
 		dialog.setIndeterminate(true);

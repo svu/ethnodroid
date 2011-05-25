@@ -27,7 +27,6 @@ public class LineageActivity extends EthnodroidActivity {
 			lineageList.setVisibility(View.GONE);
 			displayErrorMessage(R.string.no_language_family_info_found);
 		} else {
-			hideErrorMessage();
 			((ListView) lineageList)
 					.setAdapter(new ArrayAdapter<LineageParseResults.FamilyInfo>(
 							this, android.R.layout.simple_list_item_1, results
