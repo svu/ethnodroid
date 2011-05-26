@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 public class LanguageActivity extends EthnodroidActivity {
 
+	private LanguageParseResults displayedLanguageInfo;
 	private LanguageParseResults.CountryInfo displayedCountryInfo;
 
 	public LanguageActivity() {
@@ -40,17 +41,18 @@ public class LanguageActivity extends EthnodroidActivity {
 
 		resetFields();
 
-		final LanguageParseResults results = (LanguageParseResults) getIntent()
+		displayedLanguageInfo = (LanguageParseResults) getIntent()
 				.getSerializableExtra("results");
-		if (results != null) {
-			displayCountry(results.getCountries().get(0));
+		if (displayedLanguageInfo != null) {
+			displayCountry(displayedLanguageInfo, displayedLanguageInfo
+					.getCountries().get(0));
 		}
 
 		final Spinner languageCountriesList = ((Spinner) findViewById(R.id.languageCountriesList));
-		if (results.getCountries().size() > 1) {
+		if (displayedLanguageInfo.getCountries().size() > 1) {
 			final ArrayAdapter<LanguageParseResults.CountryInfo> lcla = new ArrayAdapter<LanguageParseResults.CountryInfo>(
 					this, android.R.layout.simple_spinner_dropdown_item,
-					results.getCountries());
+					displayedLanguageInfo.getCountries());
 			languageCountriesList.setAdapter(lcla);
 			languageCountriesList
 					.setOnItemSelectedListener(mCountryListListener);
@@ -60,6 +62,7 @@ public class LanguageActivity extends EthnodroidActivity {
 	}
 
 	private void resetFields() {
+		((TextView) findViewById(R.id.languageNameText)).setText("");
 		((TextView) findViewById(R.id.languageIsoCodeText)).setText("");
 		((TextView) findViewById(R.id.countryIsoCodeText)).setText("");
 		((TextView) findViewById(R.id.countryNameText)).setText("");
@@ -107,7 +110,7 @@ public class LanguageActivity extends EthnodroidActivity {
 			final LanguageParseResults.CountryInfo country = (LanguageParseResults.CountryInfo) parent
 					.getItemAtPosition(pos);
 			if (country != null)
-				displayCountry(country);
+				displayCountry(displayedLanguageInfo, country);
 		}
 
 		public void onNothingSelected(AdapterView<?> parent) {
@@ -142,9 +145,12 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	}
 
-	public void displayCountry(LanguageParseResults.CountryInfo ci) {
+	public void displayCountry(LanguageParseResults results,
+			LanguageParseResults.CountryInfo ci) {
 		displayedCountryInfo = ci;
 
+		populateRow(R.id.languageNameRow, R.id.languageNameText,
+				results.getLanguageName());
 		populateRow(R.id.languageIsoCodeRow, R.id.languageIsoCodeText,
 				ci.getLanguageIsoCode());
 		populateRow(R.id.countryIsoCodeRow, R.id.countryIsoCodeText,

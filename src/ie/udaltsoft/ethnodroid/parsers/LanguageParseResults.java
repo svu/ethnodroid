@@ -145,6 +145,7 @@ public class LanguageParseResults extends WebPageParserResults implements
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<CountryInfo> countries = new ArrayList<CountryInfo>();
+	private String languageName;
 
 	public void setCountries(ArrayList<CountryInfo> countries) {
 		this.countries = countries;
@@ -152,6 +153,14 @@ public class LanguageParseResults extends WebPageParserResults implements
 
 	public ArrayList<CountryInfo> getCountries() {
 		return countries;
+	}
+
+	public void setLanguageName(String languageName) {
+		this.languageName = languageName;
+	}
+
+	public String getLanguageName() {
+		return languageName;
 	}
 
 }

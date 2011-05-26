@@ -35,6 +35,9 @@
     <style name="InfoItemTitle">
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="ListItem">
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="InfoItem">
         <item name="android:textColor">#00FFFF</item>
     </style><style name="ErrorMessage">

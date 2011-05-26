@@ -36,8 +36,7 @@ public class CountryActivity extends EthnodroidActivity {
 					.getCountryName());
 			languageList
 					.setAdapter(new ArrayAdapter<CountryParseResults.LanguageInfo>(
-							this, android.R.layout.simple_list_item_1, results
-									.getLanguages()));
+							this, R.layout.list_item, results.getLanguages()));
 			languageList.setOnItemClickListener(languageSelectionListener);
 		}
 

@@ -29,7 +29,7 @@ public class LineageActivity extends EthnodroidActivity {
 		} else {
 			((ListView) lineageList)
 					.setAdapter(new ArrayAdapter<LineageParseResults.FamilyInfo>(
-							this, android.R.layout.simple_list_item_1, results
+							this, R.layout.list_item, results
 									.getFamilies()));
 		}
 	}

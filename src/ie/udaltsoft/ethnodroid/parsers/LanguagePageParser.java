@@ -31,6 +31,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 	}
 
 	final private Pattern TD_MATCHER = Pattern.compile("\\s*<td>(.*)</td>\\s*");
+	final private Pattern NAME_MATCHER = Pattern
+			.compile("\\s*<h1>(.*)</h1>\\s*");
 	final private Pattern CODE_MATCHER = Pattern
 			.compile("\\s*<p><a href=\"ethno_docs/introduction\\.asp#iso_code\".*<a href=\"http://www\\.sil\\.org/iso639-3/documentation\\.asp\\?id=.*\" target=\"_blank\">(.*)</a></p>\\s*");
 	final private Pattern COUNTRY_NAME_MATCHER = Pattern
@@ -104,6 +106,11 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 		while ((inputLine = rdr.readLine()) != null) {
 			switch (state) {
 			case BLANK:
+				m = NAME_MATCHER.matcher(inputLine);
+				if (m.matches()) {
+					results.setLanguageName(m.group(1));
+					break;
+				}
 				m = COUNTRY_NAME_MATCHER.matcher(inputLine);
 				if (m.matches()) {
 					country = new LanguageParseResults.CountryInfo();

@@ -15,19 +15,6 @@
 	<string name="back">Back</string>
 	<string name="clear">Clear</string>
 
-	<!-- This is a complex string containing style runs. -->
-	<string name="main_label">
-		Hello
-		<u>
-			th
-			<ignore>e</ignore>
-			re
-		</u>
-		,
-		<i>you</i>
-		<b>Activity</b>
-		!
-	</string>
 	<string name="search">Search</string>
 	<string name="search_languages">Search languages</string>
 	<string name="search_countries">Search countries</string>
@@ -54,5 +41,6 @@
 	<string name="no_language_info_found">No language information found</string>
 	<string name="no_language_family_info_found">No language family information found</string>
 	<string name="linguistic_lineage_title">Linguistic Lineage:</string>
+	<string name="language_name_title">Language</string>
 </resources>
 
