@@ -64,7 +64,7 @@ public abstract class LoadingTask<ResultsType extends WebPageParserResults, Pars
 				rdr = new BufferedReader(new InputStreamReader(is));
 			} else {
 				final AssetManager am = activity.getAssets();
-				is = am.open(localPrefix + ".eng.txt");
+				is = am.open(localPrefix + "." + queryParameter + ".txt");
 				rdr = new BufferedReader(new InputStreamReader(is,
 						Charset.forName("windows-1252")));
 			}

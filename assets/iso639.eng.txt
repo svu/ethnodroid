@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ISO 639 code sets</title>
+    <meta NAME="Keywords" CONTENT="ISO 639, ISO 639-1, ISO 639-2, ISO 639-3, language codes, language identifiers">
+	<meta NAME="Description" CONTENT="Documentation of the denotation and history of the three-letter identifier [] from ISO 639: Codes for the representation of names of languages.">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="/style/sil_org.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="top_banner">
+<img src="http://www.sil.org/graphics/home_banner.gif" width="550" height="36" hspace="0" vspace="0" border="0" align="right" alt="banner">
+</div>
+<div id="logo_bar"><a href="http://www.sil.org/"><img src="http://www.sil.org/graphics/left_column_logo.gif" alt="SIL International Home" width="144" height="144" hspace="0" vspace="0" border="0" align="left"></a>
+</div>
+
+<div id="nav_top">
+<a class="menuItem" href="http://www.sil.org/" title="SIL International's home page">SIL HOME</a>
+<a class="menuItem" href="http://www.sil.org/sil/"  title="About SIL International">ABOUT SIL</a>
+<a class="menuItem" href="http://www.sil.org/sitemap.html"  title="Site map for SIL International">SITE MAP</a>
+<a class="menuItem" href="http://www.sil.org/search.html" title="Search SIL International's website">SEARCH</a>
+<a class="menuItem" href="http://www.sil.org/sil/contact.html" title="Contact information for SIL">CONTACT US</a>
+</div>
+<DIV ID="nav_menu">
+<script LANGUAGE="javascript">
+<!--
+
+var arrNav= ["defaul", "codes.", "macrol", "chg_re", "downlo", "change", "relati", "scope.", "types.", "submit"];
+
+
+	var strURL = document.location.pathname;
+	var strFile = strURL.substr(10,6);
+
+	if (strFile==arrNav[0])
+		document.write("<h4 class=\"highlight\">ISO 639-3 Home</h4>");
+	else 
+		document.write("<h4><a href=\"default.asp\">ISO 639-3 Home</a></h4>");
+	document.write("<ul><li><a href=\"default.asp#contact\">Contact</a></li></ul>");
+	document.write("<h4>Code Tables</h4>");
+	document.write("<ul>");
+	if (strFile==arrNav[1])
+		document.write("<li class=\"highlight\">Language codes</li>");
+	else 
+		document.write("<li><a href=\"codes.asp\">Language codes</a></li>");
+
+	if (strFile==arrNav[2])
+		document.write("<li class=\"highlight\">Macrolanguage mappings</li>");
+	else 
+		document.write("<li><a href=\"macrolanguages.asp\">Macrolanguage mappings</a></li>");
+
+	if (strFile==arrNav[4])
+		document.write("<li class=\"highlight\">Download</li>");
+	else 
+		document.write("<li><a href=\"download.asp\">Download</a></li>");
+
+	document.write("</ul>");
+	document.write("<h4>Code Changes</h4>");
+	document.write("<ul>");
+	
+	if (strFile==arrNav[5])
+		document.write("<li class=\"highlight\">Change management</li>");
+	else 
+		document.write("<li><a href=\"changes.asp\">Change management</a></li>");
+		
+	if (strFile==arrNav[9])
+		document.write("<li class=\"highlight\">Submitting change requests</li>");
+	else 
+		document.write("<li><a href=\"submit_changes.asp\">Submitting change requests</a></li>");
+
+	if (strFile==arrNav[3])
+		document.write("<li class=\"highlight\">Change request index</li>");
+	else 
+		document.write("<li><a href=\"chg_requests.asp\">Change request index</a></li>");
+		
+	document.write("</ul>");
+	document.write("<h4>Related Pages</h4>");
+	document.write("<ul>");
+	if (strFile==arrNav[6])
+		document.write("<li class=\"highlight\">Relationship to other parts of ISO 639</li>");
+	else 
+		document.write("<li><a href=\"relationship.asp\">Relationship to other parts of ISO 639</a></li>");
+		
+	if (strFile==arrNav[7])
+		document.write("<li class=\"highlight\">Scope of denotation</li>");
+	else 
+		document.write("<li><a href=\"scope.asp\">Scope of denotation</a></li>");
+		
+	if (strFile==arrNav[8])
+		document.write("<li class=\"highlight\">Types of languages</li>");
+	else 
+		document.write("<li><a href=\"types.asp\">Types of languages</a></li>");
+
+		document.write("</ul>");
+
+// -->
+</script>
+
+</DIV>
+
+
+<div id="main">
+<h1>Documentation for ISO 639 identifier: eng</h1>
+<hr style="margin-bottom: 6pt">
+
+			<table>
+				<tr>
+					<td valign="top">Identifier:</td>
+					<td>eng</td>
+				</tr>
+				
+					<tr>
+						<td valign="top">Name:</td>
+						<td>
+						English
+						</td>
+					</tr>
+				
+				<tr>
+					<td valign="top">Status:</td>
+					<td>Active</td>
+				</tr>
+				
+				<tr>
+				
+					<td>Code sets:&nbsp;</td>
+				
+					<td>639-2 and 639-3</td>
+				
+				</tr>
+				
+					<tr>
+					
+						<td valign="top">Equivalent:&nbsp;</td>
+					
+						<td>
+						
+							639-1: en<br/>
+						
+						</td>
+					</tr>
+				
+					<tr>
+						<td valign="top">Scope:</td>
+						<td><a HREF="scope.asp#I">Individual</a></td>
+					</tr>
+				
+					<tr>
+						<td valign="top">Type:</td>
+						<td><a HREF="types.asp#L">Living</a></td>
+					</tr>
+				
+					<tr>
+						<td valign="top">Denotation:&nbsp;</td>
+						<td>See corresponding entry in 
+						   <a HREF="http://www.ethnologue.com/show_language.asp?code=eng">Ethnologue</a>.
+						   
+						</td>
+					</tr>
+				
+			</table>
+		
+			<!-- Macrolanguage information -->
+				
+			
+
+<div id="footer">
+	<hr>
+	<p><span class="inlinetitle">Questions/Comments:</span> <script language="javascript">
+function hiveware_enkoder(){var i,j,x,y,x=
+"x=\"63c36393a383b3d3a363b3b3b3966383b396a393a386a393b373a3a6a383a36214c722" +
+"d387\\\"=x3b3d3a35673a6a383b376a3d3a353a386a3636376938673a3a393a363b3c3a34" +
+"36353a376736356a363a393b373b3a673b3a363b3a6a3966376a3d3a373b3438373738663d" +
+"3737373a373a6a37393a3b3b343637683d383739343637663d3737373a3738663a6837393d" +
+"383867383b373a393a373a6a373b3d3a363637693867393a376a383b3d3a383b3436363637" +
+"69393a383b3d3a373b363a373a6a373b3d3a3967363637693b3a363b3a6a3966376a3d3a37" +
+"3b3438373738663d3737373a36673d3636363967353a3a6637673b3a363b3a6a3966376a3d" +
+"3a373b3438373738663d3737373a4f2d712d26314f2d6f3c687b627960723c704d6f34314d" +
+"6c26737a6f3b2b214d7f3626673437387b37272d397b322d732f3d2d26303d6c2678777669" +
+"77723c7f2b292b2c2964756767796279713a6b792b2b296b3864776e656c6e287c396b303d" +
+"3968227f666b3928782560716363756e657d3274735d3b297b34393d3b2a6922333c3a6826" +
+"696b343d292968247145646f63427168636e287d=+y{)2=+i;htgnel.x<i;0=i(rof;''=y;" +
+"\\\"97d792a6825646f63427168634d6f62766e276e696y};))2,i(rtsbus.x+'%'(epacse" +
+"nu\";y='';for(i=0;i<x.length;i+=77){for(j=Math.min(x.length,i+77);--j>=i;)" +
+"{y+=x.charAt(j);}}y;";
+while(x=eval(x));}hiveware_enkoder();
+</script></p>
+	<p class="bottommenu">[ <a href="default.asp">ISO 639-3 Home</a> | <a href="/">SIL Home</a> ]</p>
+	<p><!-- SiteSearch Google -->
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="012587068058456009639:caoqezvtgho" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search SIL International website" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+	<!-- SiteSearch Google --></p>
+<p>
+<SCRIPT LANGUAGE="javascript">
+<!--
+document.write("<STRONG>URL:</STRONG>&nbsp;<EM><A HREF=" +document.location+ ">" +document.location+ "</A></EM><br>")
+// -->
+</SCRIPT>
+<STRONG>Contact:</STRONG>&nbsp;<EM>
+<script type="text/javascript">
+//<![CDATA[
+function hiveware_enkoder(){var i,j,x,y,x=
+"x=\"z?$2z?d5^$925:5f8f4;445:9984875h8858575d48894659585f975;595d755e488488" +
+"54585f465d987;9e4d445;5f945:5f455d845;545d8:5:94568759885g8657895e4;5g985:" +
+"845499579955498g975:445d465944874559478:865795528853885597558857845g99579:" +
+"5;985f525d445;435;5884455e875;495:9784935695854854585d965;598f455948595;5d" +
+"8858835h9884465:885;545f5852545d898;585e988:475g848e8557885g8;599856855:59" +
+"5d825;465d595f5753595:455;975d8888855h9854465:895c5;5f685f86539956825:445g" +
+"845f848;855g475:995:485g8;5e8857855g89599256865:495e875;495d5753595:475;54" +
+"5d448f455f878c565g575f895;578d475;955d945;448d555f975:495g8855845:89839854" +
+"68839756448:855c485;545d998f985f988;575d^$48={55?)85)=;5hq85t*55k?952=25k>" +
+"65z095ng75pi95vj55=k25-?584+45}{55-?;5wp45gu45ec48rg75*)55')35-z880u85wd48" +
+"uv55t*55k.954+e8+=;5!{$=l?gxcn*z0ejctCv*2++=z?z0uwduvt*3+={?))=hqt*k?2=k>z" +
+"0ngpivj=k-?6+}{-?z0uwduvt*k.4+=!hqt*k?4=k>z0ngpivj=k-?6+}{-?z0uwduvt*k.4+=" +
+"!{?{0uwduvt*l+=\";y='';x=unescape(x);for(i=0;i<x.length;i++){j=x.charCodeA" +
+"t(i)-2;if(j<32)j+=94;y+=String.fromCharCode(j)}y";
+while(x=eval(x));}hiveware_enkoder();
+//]]>
+</script>
+</EM></p>
+<div  class="copyright">
+<p>
+<SCRIPT LANGUAGE="javascript">
+<!--
+var loc="iso639-3"
+var strURL = document.location.pathname;
+var strFolder = strURL.substr(1,8);
+	if (strFolder==loc)
+		document.write("<a href=\"http://www.sil.org/iso639-3/download.asp#termsofuse\">Terms of Use</a>");
+	else
+		document.write("<a href=\"http://www.sil.org/policies.asp#terms\">Terms of Use</a>");
+// -->
+</SCRIPT>
+ | <a href="http://www.sil.org/policies.asp#privacy">Privacy Policy</a> | <a href="http://www.sil.org/policies.asp#links">External Links</a><br>
+	Copyright &copy; 2011 SIL International</p>
+</div>
+</div>
+</div>
+</body>
+</html>

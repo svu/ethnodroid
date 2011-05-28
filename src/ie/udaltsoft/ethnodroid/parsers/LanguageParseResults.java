@@ -24,6 +24,7 @@ public class LanguageParseResults extends WebPageParserResults implements
 		private String languageDevelopmentText;
 		private String writingSystemText;
 		private String commentsText;
+		private String memberLanguagesText;
 
 		public void setPopulationText(String populationText) {
 			this.populationText = populationText;
@@ -140,12 +141,21 @@ public class LanguageParseResults extends WebPageParserResults implements
 		public String toString() {
 			return countryNameText == null ? countryIsoCode : countryNameText;
 		}
+
+		public void setMemberLanguagesText(String memberLanguagesText) {
+			this.memberLanguagesText = memberLanguagesText;
+		}
+
+		public String getMemberLanguagesText() {
+			return memberLanguagesText;
+		}
 	};
 
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<CountryInfo> countries = new ArrayList<CountryInfo>();
 	private String languageName;
+	private String iso639_1Code;
 
 	public void setCountries(ArrayList<CountryInfo> countries) {
 		this.countries = countries;
@@ -161,6 +171,14 @@ public class LanguageParseResults extends WebPageParserResults implements
 
 	public String getLanguageName() {
 		return languageName;
+	}
+
+	public void setIso639_1Code(String iso639_1Code) {
+		this.iso639_1Code = iso639_1Code;
+	}
+
+	public String getIso639_1Code() {
+		return iso639_1Code;
 	}
 
 }

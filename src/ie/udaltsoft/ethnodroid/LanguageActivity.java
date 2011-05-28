@@ -153,6 +153,8 @@ public class LanguageActivity extends EthnodroidActivity {
 				results.getLanguageName());
 		populateRow(R.id.languageIsoCodeRow, R.id.languageIsoCodeText,
 				ci.getLanguageIsoCode());
+		populateRow(R.id.languageIso6391CodeRow, R.id.languageIso6391CodeText,
+				results.getIso639_1Code());
 		populateRow(R.id.countryIsoCodeRow, R.id.countryIsoCodeText,
 				ci.getCountryIsoCode());
 		populateRow(R.id.countryNameRow, R.id.countryNameText,
