@@ -1,5 +1,7 @@
 package ie.udaltsoft.ethnodroid;
 
+import ie.udaltsoft.ethnodroid.tasks.LoadCountryListTask;
+import ie.udaltsoft.ethnodroid.tasks.LoadLanguageListTask;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -77,18 +79,12 @@ public class EthnodroidActivity extends Activity {
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		final Intent i = new Intent(EthnodroidActivity.this,
-				SearchActivity.class);
 		switch (item.getItemId()) {
 		case SEARCH_LANGUAGES_ID:
-			i.putExtra(SearchActivity.SEARCH_TYPE,
-					SearchActivity.SearchType.LANGUAGE);
-			startActivity(i);
+			new LoadLanguageListTask(EthnodroidActivity.this).execute("all");
 			return true;
 		case SEARCH_COUNTRIES_ID:
-			i.putExtra(SearchActivity.SEARCH_TYPE,
-					SearchActivity.SearchType.COUNTRY);
-			startActivity(i);
+			new LoadCountryListTask(EthnodroidActivity.this).execute("all");
 			return true;
 		}
 

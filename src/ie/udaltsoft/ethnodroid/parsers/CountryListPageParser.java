@@ -1,0 +1,57 @@
+package ie.udaltsoft.ethnodroid.parsers;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import android.text.Html;
+
+public class CountryListPageParser extends WebPageParser<GroupedCodes> {
+
+	private final static String[] regions = { "Africa", "Americas", "Asia",
+			"Europe", "Pacific" };
+
+	private static final Pattern REGION_START_MATCHER = Pattern
+			.compile("\\s*<td>\\s*");
+	private static final Pattern COUNTRY_MATCHER = Pattern
+			.compile("\\s*<a href=\"show_country.asp\\?name=([A-Z]+)\">\\s*");
+
+	public CountryListPageParser() {
+	}
+
+	@Override
+	public GroupedCodes parse(BufferedReader rdr) throws IOException {
+		String inputLine;
+		Matcher m;
+		int regionIdx = -1;
+		ArrayList<GroupedCodes.CodeRef> currentRegion = null;
+
+		final GroupedCodes results = new GroupedCodes();
+		results.setGroups(new HashMap<String, ArrayList<GroupedCodes.CodeRef>>());
+
+		while ((inputLine = rdr.readLine()) != null) {
+			m = REGION_START_MATCHER.matcher(inputLine);
+			if (m.matches()) {
+				regionIdx++;
+				currentRegion = new ArrayList<GroupedCodes.CodeRef>();
+				results.getGroups().put(regions[regionIdx], currentRegion);
+				continue;
+			}
+			m = COUNTRY_MATCHER.matcher(inputLine);
+			if (m.matches()) {
+				final GroupedCodes.CodeRef newCountry = new GroupedCodes.CodeRef();
+				newCountry.setCode(m.group(1));
+				inputLine = rdr.readLine();
+				if (inputLine != null)
+					newCountry.setName(Html.fromHtml(inputLine.trim())
+							.toString());
+				currentRegion.add(newCountry);
+				continue;
+			}
+		}
+		return results;
+	}
+}

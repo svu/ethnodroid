@@ -55,7 +55,7 @@ public abstract class LoadingTask<ResultsType extends WebPageParserResults, Pars
 		try {
 			final InputStream is;
 			final BufferedReader rdr;
-			if (activity.isRemoteLoading()) {
+			if (queryFormat != null && activity.isRemoteLoading()) {
 				final URL url = new URL("http://www.ethnologue.com/"
 						+ queryFormat + queryParameter);
 
@@ -100,7 +100,11 @@ public abstract class LoadingTask<ResultsType extends WebPageParserResults, Pars
 
 		final Intent i = new Intent(activity, nextActivityClass);
 		i.putExtra(EthnodroidActivity.RESULTS_EXTRAS, results);
+		customizeIntent(i);
 		activity.startActivity(i);
+	}
+
+	protected void customizeIntent(Intent i) {
 	}
 
 }

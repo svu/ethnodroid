@@ -1,6 +1,7 @@
 package ie.udaltsoft.ethnodroid;
 
-import android.content.Intent;
+import ie.udaltsoft.ethnodroid.tasks.LoadCountryListTask;
+import ie.udaltsoft.ethnodroid.tasks.LoadLanguageListTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -38,19 +39,13 @@ public class MainActivity extends EthnodroidActivity {
 
 	private final OnClickListener mActivateLanguagesListener = new OnClickListener() {
 		public void onClick(View v) {
-			final Intent i = new Intent(MainActivity.this, SearchActivity.class);
-			i.putExtra(SearchActivity.SEARCH_TYPE,
-					SearchActivity.SearchType.LANGUAGE);
-			startActivity(i);
+			new LoadLanguageListTask(MainActivity.this).execute("all");
 		}
 	};
 
 	private final OnClickListener mActivateCountriesListener = new OnClickListener() {
 		public void onClick(View v) {
-			final Intent i = new Intent(MainActivity.this, SearchActivity.class);
-			i.putExtra(SearchActivity.SEARCH_TYPE,
-					SearchActivity.SearchType.COUNTRY);
-			startActivity(i);
+			new LoadCountryListTask(MainActivity.this).execute("all");
 		}
 	};
 
