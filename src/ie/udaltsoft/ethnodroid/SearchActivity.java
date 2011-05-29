@@ -6,6 +6,7 @@ import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -98,6 +99,7 @@ public class SearchActivity extends EthnodroidActivity {
 				RESULTS_EXTRAS);
 		final String[] regions = groupedCodes.getGroups().keySet()
 				.toArray(new String[0]);
+		Arrays.sort(regions);
 
 		final ArrayAdapter<String> lcla = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_dropdown_item, regions);
