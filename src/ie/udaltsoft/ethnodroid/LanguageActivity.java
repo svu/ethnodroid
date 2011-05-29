@@ -137,10 +137,12 @@ public class LanguageActivity extends EthnodroidActivity {
 	}
 
 	private void populateRow(int rowId, int textId, String textValue) {
-		if (textValue == null)
+		if (textValue == null) {
 			findViewById(rowId).setVisibility(View.GONE);
-		else {
+			findViewById(textId).setVisibility(View.GONE);
+		} else {
 			findViewById(rowId).setVisibility(View.VISIBLE);
+			findViewById(textId).setVisibility(View.VISIBLE);
 			setFormFieldText(textId, textValue);
 		}
 	}
