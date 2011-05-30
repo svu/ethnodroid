@@ -26,7 +26,9 @@
     android:orientation="vertical">
 
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
+    <TextView android:layout_width="wrap_content" android:text="TextView" android:layout_height="wrap_content" style="@style/InfoItemTitle" android:id="@+id/searchList1Title"></TextView>
     <Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/searchList1"></Spinner>
+    <TextView android:id="@+id/searchList2Title" android:layout_width="wrap_content" android:text="TextView" android:layout_height="wrap_content" style="@style/InfoItemTitle"></TextView>
     <Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/searchList2"></Spinner>
     <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:drawableRight="@android:drawable/ic_menu_search" android:id="@+id/searchPattern"></EditText>
     <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/semi_black">

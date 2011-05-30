@@ -43,5 +43,6 @@
 	<string name="linguistic_lineage_title">Linguistic Lineage:</string>
 	<string name="language_name_title">Language</string>
 	<string name="language_iso639_1_code_title">ISO 639-1 code</string>
+	<string name="initial_letter_title">Initial letter</string>
 </resources>
 

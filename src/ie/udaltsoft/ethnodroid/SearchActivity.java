@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class SearchActivity extends EthnodroidActivity {
 
@@ -105,6 +106,20 @@ public class SearchActivity extends EthnodroidActivity {
 		searchList1.setAdapter(lcla);
 		searchList1.setOnItemSelectedListener(primaryListListener);
 		searchList2.setOnItemSelectedListener(secondaryListListener);
+
+		TextView searchList1Title = (TextView) findViewById(R.id.searchList1Title);
+		TextView searchList2Title = (TextView) findViewById(R.id.searchList2Title);
+		switch (searchType) {
+		case LANGUAGE:
+			searchList1Title.setText(R.string.initial_letter_title);
+			searchList2Title.setText(R.string.language_name_title);
+			break;
+		case COUNTRY:
+			searchList1Title.setText(R.string.region_title);
+			searchList2Title.setText(R.string.country_name_title);
+			break;
+		}
+
 	}
 
 	@Override
