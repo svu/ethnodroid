@@ -21,8 +21,7 @@ public final class LoadLanguageListTask extends
 
 	@Override
 	protected boolean checkResults() {
-		if (results == null || results.getGroups() == null
-				|| results.getGroups().size() == 0) {
+		if (results == null || results.getGroups().size() == 0) {
 			activity.displayErrorMessage(R.string.no_language_info_found);
 			return false;
 		}

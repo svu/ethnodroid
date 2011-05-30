@@ -21,8 +21,9 @@ public final class ExtractCountryTask extends
 
 	@Override
 	protected boolean checkResults() {
-		if (results == null || results.getLanguages() == null
-				|| results.getLanguages().size() == 0) {
+		if (results == null
+				|| (results.getLanguages().size() == 0 && results
+						.getSubcountries().size() == 0)) {
 			activity.displayErrorMessage(R.string.no_country_info_found);
 			return false;
 		}

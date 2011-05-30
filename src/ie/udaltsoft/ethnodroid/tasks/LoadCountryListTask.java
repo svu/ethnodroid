@@ -11,8 +11,7 @@ public final class LoadCountryListTask extends
 		LoadingTask<GroupedCodes, CountryListPageParser> {
 
 	public LoadCountryListTask(EthnodroidActivity activity) {
-		super(activity, null, "country_index",
-				SearchActivity.class);
+		super(activity, null, "country_index", SearchActivity.class);
 	}
 
 	@Override
@@ -22,8 +21,7 @@ public final class LoadCountryListTask extends
 
 	@Override
 	protected boolean checkResults() {
-		if (results == null || results.getGroups() == null
-				|| results.getGroups().size() == 0) {
+		if (results == null || results.getGroups().size() == 0) {
 			activity.displayErrorMessage(R.string.no_country_info_found);
 			return false;
 		}

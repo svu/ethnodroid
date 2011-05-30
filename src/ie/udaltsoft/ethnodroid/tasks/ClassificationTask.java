@@ -21,8 +21,7 @@ public class ClassificationTask extends
 
 	@Override
 	protected boolean checkResults() {
-		if (results == null || results.getFamilies() == null
-				|| results.getFamilies().size() == 0) {
+		if (results == null || results.getFamilies().size() == 0) {
 			activity.displayErrorMessage(R.string.no_language_family_info_found);
 			return false;
 		}

@@ -2,6 +2,7 @@ package ie.udaltsoft.ethnodroid;
 
 import ie.udaltsoft.ethnodroid.parsers.data.CountryParseResults;
 import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
+import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 public class CountryActivity extends EthnodroidActivity {
 
+	private CountryParseResults countryParseResults;
+
 	public CountryActivity() {
 	}
 
@@ -23,38 +26,46 @@ public class CountryActivity extends EthnodroidActivity {
 		setContentView(R.layout.country_layout);
 		setBrowserLink();
 
-		final CountryParseResults results = (CountryParseResults) getIntent()
+		countryParseResults = (CountryParseResults) getIntent()
 				.getSerializableExtra(RESULTS_EXTRAS);
 
-		final ListView languageList = (ListView) findViewById(R.id.languageList);
+		final ListView itemList = (ListView) findViewById(R.id.languageList);
 
-		if (results == null) {
-			languageList.setVisibility(View.GONE);
+		if (countryParseResults == null) {
+			itemList.setVisibility(View.GONE);
 			findViewById(R.id.countryNameRow).setVisibility(View.GONE);
 			displayErrorMessage(R.string.no_country_info_found);
 		} else {
-			((TextView) findViewById(R.id.countryNameText)).setText(results
-					.getCountryName());
-			languageList
-					.setAdapter(new ArrayAdapter<NamedCode>(
-							this, R.layout.list_item, results.getLanguages()));
-			languageList.setOnItemClickListener(languageSelectionListener);
+			((TextView) findViewById(R.id.countryNameText))
+					.setText(countryParseResults.getCountryName());
+
+			itemList.setAdapter(new ArrayAdapter<NamedCode>(this,
+					R.layout.list_item, isCountryList() ? countryParseResults
+							.getSubcountries() : countryParseResults
+							.getLanguages()));
+			itemList.setOnItemClickListener(languageSelectionListener);
 		}
 
+	}
+
+	private boolean isCountryList() {
+		return countryParseResults.getLanguages().size() == 0;
 	}
 
 	private final OnItemClickListener languageSelectionListener = new OnItemClickListener() {
 
 		public void onItemClick(AdapterView<?> parent, View view, int pos,
 				long id) {
-			final NamedCode language = (NamedCode) parent
-					.getItemAtPosition(pos);
+			final NamedCode item = (NamedCode) parent.getItemAtPosition(pos);
 
-			if (language != null) {
-				final ExtractLanguageTask extractLanguageTask = new ExtractLanguageTask(
-						CountryActivity.this);
-
-				extractLanguageTask.execute(language.getCode());
+			if (item != null) {
+				if (isCountryList()) {
+					new ExtractCountryTask(CountryActivity.this).execute(item
+							.getCode());
+				} else {
+					new ExtractLanguageTask(CountryActivity.this).execute(item
+							.getCode());
+				}
 			}
 		}
 	};

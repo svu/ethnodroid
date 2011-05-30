@@ -70,8 +70,7 @@ public final class ExtractLanguageTask extends
 
 	@Override
 	protected boolean checkResults() {
-		if (results == null || results.getCountries() == null
-				|| results.getCountries().size() == 0) {
+		if (results == null || results.getCountries().size() == 0) {
 			activity.displayErrorMessage(R.string.no_language_info_found);
 			return false;
 		}

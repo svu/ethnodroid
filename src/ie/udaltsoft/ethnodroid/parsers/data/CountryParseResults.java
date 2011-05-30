@@ -13,6 +13,8 @@ public class CountryParseResults extends WebPageParserResults implements
 
 	private ArrayList<NamedCode> languages = new ArrayList<NamedCode>();
 
+	private ArrayList<NamedCode> subcountries = new ArrayList<NamedCode>();
+	
 	public void setLanguages(ArrayList<NamedCode> languages) {
 		this.languages = languages;
 	}
@@ -27,6 +29,14 @@ public class CountryParseResults extends WebPageParserResults implements
 
 	public String getCountryName() {
 		return countryName;
+	}
+
+	public void setSubcountries(ArrayList<NamedCode> subcountries) {
+		this.subcountries = subcountries;
+	}
+
+	public ArrayList<NamedCode> getSubcountries() {
+		return subcountries;
 	}
 
 }

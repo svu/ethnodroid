@@ -6,7 +6,6 @@ import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,7 +29,6 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 		ArrayList<NamedCode> currentRegion = null;
 
 		final GroupedCodes results = new GroupedCodes();
-		results.setGroups(new HashMap<String, ArrayList<NamedCode>>());
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = REGION_START_MATCHER.matcher(inputLine);
