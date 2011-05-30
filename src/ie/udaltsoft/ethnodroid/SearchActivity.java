@@ -1,6 +1,7 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.parsers.GroupedCodes;
+import ie.udaltsoft.ethnodroid.parsers.data.GroupedCodes;
+import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
 import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
 
@@ -40,13 +41,12 @@ public class SearchActivity extends EthnodroidActivity {
 			final Spinner searchList2 = (Spinner) findViewById(R.id.searchList2);
 
 			final String region = (String) parent.getItemAtPosition(pos);
-			ArrayList<GroupedCodes.CodeRef> countryRefs = groupedCodes
-					.getGroups().get(region);
-			final ArrayAdapter<GroupedCodes.CodeRef> lcla = new ArrayAdapter<GroupedCodes.CodeRef>(
+			final ArrayList<NamedCode> countryRefs = groupedCodes.getGroups()
+					.get(region);
+			final ArrayAdapter<NamedCode> lcla = new ArrayAdapter<NamedCode>(
 					SearchActivity.this,
 					android.R.layout.simple_spinner_dropdown_item, countryRefs);
 			searchList2.setAdapter(lcla);
-			searchList2.setSelection(-1);
 		}
 
 		public void onNothingSelected(AdapterView<?> arg0) {
@@ -60,8 +60,7 @@ public class SearchActivity extends EthnodroidActivity {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			final GroupedCodes.CodeRef code = (GroupedCodes.CodeRef) parent
-					.getItemAtPosition(pos);
+			final NamedCode code = (NamedCode) parent.getItemAtPosition(pos);
 			mEditor.setText(code.getCode());
 		}
 
@@ -104,7 +103,6 @@ public class SearchActivity extends EthnodroidActivity {
 		final ArrayAdapter<String> lcla = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_dropdown_item, regions);
 		searchList1.setAdapter(lcla);
-		searchList1.setSelection(-1);
 		searchList1.setOnItemSelectedListener(primaryListListener);
 		searchList2.setOnItemSelectedListener(secondaryListListener);
 	}

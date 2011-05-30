@@ -4,7 +4,7 @@ import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.LanguageActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.parsers.LanguagePageParser;
-import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.LanguageParseResults;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

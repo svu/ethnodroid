@@ -4,7 +4,7 @@ import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.SearchActivity;
 import ie.udaltsoft.ethnodroid.parsers.CountryListPageParser;
-import ie.udaltsoft.ethnodroid.parsers.GroupedCodes;
+import ie.udaltsoft.ethnodroid.parsers.data.GroupedCodes;
 import android.content.Intent;
 
 public final class LoadCountryListTask extends

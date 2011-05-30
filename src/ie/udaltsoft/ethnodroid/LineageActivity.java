@@ -1,6 +1,6 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.parsers.LineageParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.LineageParseResults;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;

@@ -1,4 +1,4 @@
-package ie.udaltsoft.ethnodroid.parsers;
+package ie.udaltsoft.ethnodroid.parsers.data;
 
 import java.io.Serializable;
 

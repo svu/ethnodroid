@@ -1,5 +1,7 @@
 package ie.udaltsoft.ethnodroid.parsers;
 
+import ie.udaltsoft.ethnodroid.parsers.data.LanguageParseResults;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.regex.Matcher;

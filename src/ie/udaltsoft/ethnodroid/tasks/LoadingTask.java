@@ -3,7 +3,7 @@ package ie.udaltsoft.ethnodroid.tasks;
 import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.parsers.WebPageParser;
-import ie.udaltsoft.ethnodroid.parsers.WebPageParserResults;
+import ie.udaltsoft.ethnodroid.parsers.data.WebPageParserResults;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

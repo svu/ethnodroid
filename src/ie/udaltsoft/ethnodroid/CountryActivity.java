@@ -1,6 +1,7 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.parsers.CountryParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.CountryParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
 import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,7 @@ public class CountryActivity extends EthnodroidActivity {
 			((TextView) findViewById(R.id.countryNameText)).setText(results
 					.getCountryName());
 			languageList
-					.setAdapter(new ArrayAdapter<CountryParseResults.LanguageInfo>(
+					.setAdapter(new ArrayAdapter<NamedCode>(
 							this, R.layout.list_item, results.getLanguages()));
 			languageList.setOnItemClickListener(languageSelectionListener);
 		}
@@ -46,14 +47,14 @@ public class CountryActivity extends EthnodroidActivity {
 
 		public void onItemClick(AdapterView<?> parent, View view, int pos,
 				long id) {
-			final CountryParseResults.LanguageInfo language = (CountryParseResults.LanguageInfo) parent
+			final NamedCode language = (NamedCode) parent
 					.getItemAtPosition(pos);
 
 			if (language != null) {
 				final ExtractLanguageTask extractLanguageTask = new ExtractLanguageTask(
 						CountryActivity.this);
 
-				extractLanguageTask.execute(language.getIsoCode());
+				extractLanguageTask.execute(language.getCode());
 			}
 		}
 	};

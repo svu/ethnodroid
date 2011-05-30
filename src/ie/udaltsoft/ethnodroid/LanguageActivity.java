@@ -1,6 +1,6 @@
 package ie.udaltsoft.ethnodroid;
 
-import ie.udaltsoft.ethnodroid.parsers.LanguageParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.LanguageParseResults;
 import ie.udaltsoft.ethnodroid.tasks.ClassificationTask;
 import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import android.content.Intent;

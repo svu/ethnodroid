@@ -4,7 +4,7 @@ import ie.udaltsoft.ethnodroid.CountryActivity;
 import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.parsers.CountryPageParser;
-import ie.udaltsoft.ethnodroid.parsers.CountryParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.CountryParseResults;
 
 public final class ExtractCountryTask extends
 		LoadingTask<CountryParseResults, CountryPageParser> {

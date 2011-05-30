@@ -1,5 +1,8 @@
 package ie.udaltsoft.ethnodroid.parsers;
 
+import ie.udaltsoft.ethnodroid.parsers.data.GroupedCodes;
+import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,23 +27,23 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 		String inputLine;
 		Matcher m;
 		int regionIdx = -1;
-		ArrayList<GroupedCodes.CodeRef> currentRegion = null;
+		ArrayList<NamedCode> currentRegion = null;
 
 		final GroupedCodes results = new GroupedCodes();
-		results.setGroups(new HashMap<String, ArrayList<GroupedCodes.CodeRef>>());
+		results.setGroups(new HashMap<String, ArrayList<NamedCode>>());
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = REGION_START_MATCHER.matcher(inputLine);
 			if (m.matches()) {
 				final String letter = m.group(1);
 				regionIdx++;
-				currentRegion = new ArrayList<GroupedCodes.CodeRef>();
+				currentRegion = new ArrayList<NamedCode>();
 				results.getGroups().put(letter, currentRegion);
 				continue;
 			}
 			m = LANGUAGE_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				final GroupedCodes.CodeRef newLang = new GroupedCodes.CodeRef();
+				final NamedCode newLang = new NamedCode();
 				newLang.setCode(m.group(1));
 				newLang.setName(Html.fromHtml(m.group(2)).toString());
 				currentRegion.add(newLang);

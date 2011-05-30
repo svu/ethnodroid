@@ -1,5 +1,8 @@
 package ie.udaltsoft.ethnodroid.parsers;
 
+import ie.udaltsoft.ethnodroid.parsers.data.GroupedCodes;
+import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,22 +30,22 @@ public class CountryListPageParser extends WebPageParser<GroupedCodes> {
 		String inputLine;
 		Matcher m;
 		int regionIdx = -1;
-		ArrayList<GroupedCodes.CodeRef> currentRegion = null;
+		ArrayList<NamedCode> currentRegion = null;
 
 		final GroupedCodes results = new GroupedCodes();
-		results.setGroups(new HashMap<String, ArrayList<GroupedCodes.CodeRef>>());
+		results.setGroups(new HashMap<String, ArrayList<NamedCode>>());
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = REGION_START_MATCHER.matcher(inputLine);
 			if (m.matches()) {
 				regionIdx++;
-				currentRegion = new ArrayList<GroupedCodes.CodeRef>();
+				currentRegion = new ArrayList<NamedCode>();
 				results.getGroups().put(regions[regionIdx], currentRegion);
 				continue;
 			}
 			m = COUNTRY_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				final GroupedCodes.CodeRef newCountry = new GroupedCodes.CodeRef();
+				final NamedCode newCountry = new NamedCode();
 				newCountry.setCode(m.group(1));
 				inputLine = rdr.readLine();
 				if (inputLine != null)

@@ -4,7 +4,7 @@ import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.LineageActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.parsers.LineagePageParser;
-import ie.udaltsoft.ethnodroid.parsers.LineageParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.LineageParseResults;
 
 public class ClassificationTask extends
 		LoadingTask<LineageParseResults, LineagePageParser> {

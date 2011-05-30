@@ -1,5 +1,8 @@
 package ie.udaltsoft.ethnodroid.parsers;
 
+import ie.udaltsoft.ethnodroid.parsers.data.CountryParseResults;
+import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -24,7 +27,7 @@ public class CountryPageParser extends WebPageParser<CountryParseResults> {
 		String languageName = null;
 
 		final CountryParseResults results = new CountryParseResults();
-		CountryParseResults.LanguageInfo language = null;
+		NamedCode language = null;
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = TITLE_MATCHER.matcher(inputLine);
@@ -41,8 +44,8 @@ public class CountryPageParser extends WebPageParser<CountryParseResults> {
 
 			m = INFO_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				language = new CountryParseResults.LanguageInfo();
-				language.setIsoCode(m.group(1));
+				language = new NamedCode();
+				language.setCode(m.group(1));
 				language.setName(languageName);
 				results.getLanguages().add(language);
 				continue;
