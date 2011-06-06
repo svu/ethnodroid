@@ -31,13 +31,13 @@ public class LanguageActivity extends EthnodroidActivity {
 		setBrowserLink();
 
 		findViewById(R.id.languageMapText).setOnClickListener(
-				mLanguageMapListener);
+				languageMapListener);
 
 		findViewById(R.id.classificationText).setOnClickListener(
-				mClassificationListener);
+				classificationListener);
 
 		findViewById(R.id.countryNameText).setOnClickListener(
-				mCountryNameListener);
+				countryNameListener);
 
 		resetFields();
 
@@ -55,7 +55,7 @@ public class LanguageActivity extends EthnodroidActivity {
 					displayedLanguageInfo.getCountries());
 			languageCountriesList.setAdapter(lcla);
 			languageCountriesList
-					.setOnItemSelectedListener(mCountryListListener);
+					.setOnItemSelectedListener(countryListListener);
 		} else {
 			languageCountriesList.setVisibility(View.GONE);
 		}
@@ -79,7 +79,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		((TextView) findViewById(R.id.commentsText)).setText("");
 	}
 
-	private final OnClickListener mLanguageMapListener = new OnClickListener() {
+	private final OnClickListener languageMapListener = new OnClickListener() {
 		public void onClick(View v) {
 			final Object url = findViewById(R.id.languageMapText).getTag();
 			if (url == null)
@@ -92,7 +92,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private final OnClickListener mClassificationListener = new OnClickListener() {
+	private final OnClickListener classificationListener = new OnClickListener() {
 		public void onClick(View v) {
 
 			final ClassificationTask extractClassificationTask = new ClassificationTask(
@@ -103,7 +103,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private final OnItemSelectedListener mCountryListListener = new OnItemSelectedListener() {
+	private final OnItemSelectedListener countryListListener = new OnItemSelectedListener() {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
@@ -118,7 +118,7 @@ public class LanguageActivity extends EthnodroidActivity {
 		}
 	};
 
-	private final OnClickListener mCountryNameListener = new OnClickListener() {
+	private final OnClickListener countryNameListener = new OnClickListener() {
 
 		public void onClick(View view) {
 			final String countryIsoCode = (String) view.getTag();

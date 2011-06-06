@@ -23,9 +23,9 @@ public class MainActivity extends EthnodroidActivity {
 		setBrowserLink();
 
 		((Button) findViewById(R.id.activateLanguagesButton))
-				.setOnClickListener(mActivateLanguagesListener);
+				.setOnClickListener(activateLanguagesListener);
 		((Button) findViewById(R.id.activateCountriesButton))
-				.setOnClickListener(mActivateCountriesListener);
+				.setOnClickListener(activateCountriesListener);
 
 	}
 
@@ -37,21 +37,15 @@ public class MainActivity extends EthnodroidActivity {
 		return false;
 	}
 
-	private final OnClickListener mActivateLanguagesListener = new OnClickListener() {
+	private final OnClickListener activateLanguagesListener = new OnClickListener() {
 		public void onClick(View v) {
 			new LoadLanguageListTask(MainActivity.this).execute("all");
 		}
 	};
 
-	private final OnClickListener mActivateCountriesListener = new OnClickListener() {
+	private final OnClickListener activateCountriesListener = new OnClickListener() {
 		public void onClick(View v) {
 			new LoadCountryListTask(MainActivity.this).execute("all");
-		}
-	};
-
-	OnClickListener mBackListener = new OnClickListener() {
-		public void onClick(View v) {
-			finish();
 		}
 	};
 }

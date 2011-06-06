@@ -27,7 +27,7 @@ public class SearchActivity extends EthnodroidActivity {
 
 	public static final String SEARCH_TYPE = "searchType";
 
-	private EditText mEditor;
+	private EditText searchPattern;
 
 	public enum SearchType implements Serializable {
 		LANGUAGE, COUNTRY
@@ -51,7 +51,7 @@ public class SearchActivity extends EthnodroidActivity {
 		}
 
 		public void onNothingSelected(AdapterView<?> arg0) {
-			mClearListener.onClick(arg0);
+			clearListener.onClick(arg0);
 		}
 	};
 
@@ -62,11 +62,11 @@ public class SearchActivity extends EthnodroidActivity {
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
 			final NamedCode code = (NamedCode) parent.getItemAtPosition(pos);
-			mEditor.setText(code.getCode());
+			searchPattern.setText(code.getCode());
 		}
 
 		public void onNothingSelected(AdapterView<?> arg0) {
-			mClearListener.onClick(arg0);
+			clearListener.onClick(arg0);
 		}
 	};
 
@@ -85,13 +85,12 @@ public class SearchActivity extends EthnodroidActivity {
 
 		// Find the text editor view inside the layout, because we
 		// want to do various programmatic things with it.
-		mEditor = (EditText) findViewById(R.id.searchPattern);
+		searchPattern = (EditText) findViewById(R.id.searchPattern);
 
-		((Button) findViewById(R.id.search))
-				.setOnClickListener(mSearchListener);
-		((Button) findViewById(R.id.clear)).setOnClickListener(mClearListener);
-		mEditor.setOnKeyListener(mSearchKeyListener);
-		mEditor.setText("");
+		((Button) findViewById(R.id.search)).setOnClickListener(searchListener);
+		((Button) findViewById(R.id.clear)).setOnClickListener(clearListener);
+		searchPattern.setOnKeyListener(searchKeyListener);
+		searchPattern.setText("");
 
 		final Spinner searchList1 = (Spinner) findViewById(R.id.searchList1);
 		final Spinner searchList2 = (Spinner) findViewById(R.id.searchList2);
@@ -127,20 +126,20 @@ public class SearchActivity extends EthnodroidActivity {
 		return false;
 	}
 
-	private final OnKeyListener mSearchKeyListener = new OnKeyListener() {
+	private final OnKeyListener searchKeyListener = new OnKeyListener() {
 		public boolean onKey(View view, int keyCode, KeyEvent event) {
 			if (keyCode == KeyEvent.KEYCODE_ENTER) {
-				mSearchListener.onClick(view);
+				searchListener.onClick(view);
 				return true;
 			}
 			return false;
 		}
 	};
 
-	private final OnClickListener mSearchListener = new OnClickListener() {
+	private final OnClickListener searchListener = new OnClickListener() {
 		public void onClick(View v) {
 
-			final String searchString = (mEditor.getText().toString());
+			final String searchString = (searchPattern.getText().toString());
 			switch (searchType) {
 			case LANGUAGE:
 				new ExtractLanguageTask(SearchActivity.this)
@@ -154,9 +153,9 @@ public class SearchActivity extends EthnodroidActivity {
 		}
 	};
 
-	private final OnClickListener mClearListener = new OnClickListener() {
+	private final OnClickListener clearListener = new OnClickListener() {
 		public void onClick(View v) {
-			mEditor.setText("");
+			searchPattern.setText("");
 		}
 	};
 }

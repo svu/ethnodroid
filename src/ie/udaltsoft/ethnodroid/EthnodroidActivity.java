@@ -20,7 +20,7 @@ public class EthnodroidActivity extends Activity {
 	static final private int SEARCH_LANGUAGES_ID = Menu.FIRST;
 	static final private int SEARCH_COUNTRIES_ID = Menu.FIRST + 1;
 
-	public OnClickListener mBrowseEthnologueClickListener = new OnClickListener() {
+	public OnClickListener browseEthnologueClickListener = new OnClickListener() {
 
 		public void onClick(View v) {
 			final Intent myIntent = new Intent(Intent.ACTION_VIEW,
@@ -35,7 +35,7 @@ public class EthnodroidActivity extends Activity {
 
 	protected void setBrowserLink() {
 		((ImageView) findViewById(R.id.topImage))
-				.setOnClickListener(mBrowseEthnologueClickListener);
+				.setOnClickListener(browseEthnologueClickListener);
 	}
 
 	public void displayErrorMessage(CharSequence message) {
