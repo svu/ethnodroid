@@ -123,7 +123,18 @@ public class SearchActivity extends EthnodroidActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		return false;
+		switch (searchType) {
+		case LANGUAGE:
+			menu.add(0, Menu.FIRST, 0, R.string.search_countries).setShortcut(
+					'1', 'c');
+			break;
+		case COUNTRY:
+			menu.add(0, Menu.FIRST, 0, R.string.search_languages).setShortcut(
+					'1', 'l');
+			break;
+		}
+
+		return true;
 	}
 
 	private final OnKeyListener searchKeyListener = new OnKeyListener() {
