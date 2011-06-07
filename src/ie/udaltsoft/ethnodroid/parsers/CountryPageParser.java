@@ -48,18 +48,15 @@ public class CountryPageParser extends WebPageParser<CountryParseResults> {
 
 			m = LANGUAGE_INFO_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				language = new NamedCode();
-				language.setCode(m.group(1));
-				language.setName(languageName);
+				language = new NamedCode(m.group(1), languageName);
 				results.getLanguages().add(language);
 				continue;
 			}
 
 			m = COUNTRY_INFO_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				final NamedCode country = new NamedCode();
-				country.setCode(m.group(1));
-				country.setName(Html.fromHtml(m.group(2)).toString());
+				final NamedCode country = new NamedCode(m.group(1), Html
+						.fromHtml(m.group(2)).toString());
 				results.getSubcountries().add(country);
 				continue;
 			}

@@ -98,10 +98,12 @@ public abstract class LoadingTask<ResultsType extends WebPageParserResults, Pars
 			return;
 		}
 
-		final Intent i = new Intent(activity, nextActivityClass);
-		i.putExtra(EthnodroidActivity.RESULTS_EXTRAS, results);
-		customizeIntent(i);
-		activity.startActivity(i);
+		if (nextActivityClass != null) {
+			final Intent i = new Intent(activity, nextActivityClass);
+			i.putExtra(EthnodroidActivity.RESULTS_EXTRAS, results);
+			customizeIntent(i);
+			activity.startActivity(i);
+		}
 	}
 
 	protected void customizeIntent(Intent i) {

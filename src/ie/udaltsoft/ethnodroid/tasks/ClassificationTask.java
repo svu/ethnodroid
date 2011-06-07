@@ -4,6 +4,7 @@ import ie.udaltsoft.ethnodroid.EthnodroidActivity;
 import ie.udaltsoft.ethnodroid.LineageActivity;
 import ie.udaltsoft.ethnodroid.R;
 import ie.udaltsoft.ethnodroid.parsers.LineagePageParser;
+import ie.udaltsoft.ethnodroid.parsers.data.FamilyInfo;
 import ie.udaltsoft.ethnodroid.parsers.data.LineageParseResults;
 
 public class ClassificationTask extends
@@ -26,7 +27,7 @@ public class ClassificationTask extends
 			return false;
 		}
 
-		final LineageParseResults.FamilyInfo fi = results.getFamilies().get(0);
+		final FamilyInfo fi = results.getFamilies().get(0);
 
 		if (fi.getCode() == null) {
 			activity.displayErrorMessage(R.string.no_language_family_info_found);

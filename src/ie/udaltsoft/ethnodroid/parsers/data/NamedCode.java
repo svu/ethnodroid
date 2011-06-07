@@ -9,6 +9,11 @@ public class NamedCode implements Serializable {
 	private String code;
 	private String name;
 
+	public NamedCode(String code, String name) {
+		this.code = code;
+		this.name = name;
+	}
+
 	public void setCode(String isoCode) {
 		this.code = isoCode;
 	}

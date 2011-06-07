@@ -43,8 +43,7 @@ public class CountryListPageParser extends WebPageParser<GroupedCodes> {
 			}
 			m = COUNTRY_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				final NamedCode newCountry = new NamedCode();
-				newCountry.setCode(m.group(1));
+				final NamedCode newCountry = new NamedCode(m.group(1), null);
 				inputLine = rdr.readLine();
 				if (inputLine != null)
 					newCountry.setName(Html.fromHtml(inputLine.trim())

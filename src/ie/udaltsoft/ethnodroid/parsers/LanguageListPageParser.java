@@ -41,9 +41,8 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 			}
 			m = LANGUAGE_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				final NamedCode newLang = new NamedCode();
-				newLang.setCode(m.group(1));
-				newLang.setName(Html.fromHtml(m.group(2)).toString());
+				final NamedCode newLang = new NamedCode(m.group(1), Html
+						.fromHtml(m.group(2)).toString());
 				currentRegion.add(newLang);
 				continue;
 			}

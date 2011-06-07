@@ -1,5 +1,6 @@
 package ie.udaltsoft.ethnodroid.parsers;
 
+import ie.udaltsoft.ethnodroid.parsers.data.FamilyInfo;
 import ie.udaltsoft.ethnodroid.parsers.data.LineageParseResults;
 
 import java.io.BufferedReader;
@@ -21,15 +22,13 @@ public class LineagePageParser extends WebPageParser<LineageParseResults> {
 		Matcher m;
 
 		final LineageParseResults results = new LineageParseResults();
-		LineageParseResults.FamilyInfo family = null;
+		FamilyInfo family = null;
 
 		while ((inputLine = rdr.readLine()) != null) {
 			m = DATA_MATCHER.matcher(inputLine);
 			if (m.matches()) {
-				family = new LineageParseResults.FamilyInfo();
-				family.setCode(m.group(1));
-				family.setName(m.group(2));
-				family.setNumberOfLanguages(Integer.parseInt(m.group(3)));
+				family = new FamilyInfo(m.group(1), m.group(2),
+						Integer.parseInt(m.group(3)));
 				results.getFamilies().add(family);
 				continue;
 			}
