@@ -16,7 +16,7 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 	private static final Pattern REGION_START_MATCHER = Pattern
 			.compile("\\s*/([A-Z])/\\s*");
 	private static final Pattern LANGUAGE_MATCHER = Pattern
-			.compile("\\s*<a HREF=\"show_language.asp\\?code=([a-z]+)\">(.*)</a><br>\\s*");
+			.compile("\\s*<a HREF=\"show_language.asp\\?code=([a-z]+)\">(.*)</a>(.*)<br>\\s*");
 
 	public LanguageListPageParser() {
 	}
@@ -42,7 +42,7 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 			m = LANGUAGE_MATCHER.matcher(inputLine);
 			if (m.matches()) {
 				final NamedCode newLang = new NamedCode(m.group(1), Html
-						.fromHtml(m.group(2)).toString());
+						.fromHtml(m.group(2) + " " + m.group(3)).toString());
 				currentRegion.add(newLang);
 				continue;
 			}
