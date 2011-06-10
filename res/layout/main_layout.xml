@@ -2,8 +2,8 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent" android:layout_gravity="center_vertical|center_horizontal" android:orientation="vertical">
+  android:layout_gravity="center_vertical|center_horizontal" android:orientation="vertical" android:layout_height="wrap_content">
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/topImage" android:src="@drawable/ethno_top" android:layout_gravity="center_horizontal" android:clickable="true" android:paddingBottom="6dip"></ImageView>
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/activateLanguagesButton" android:text="@string/languages" android:clickable="true" android:layout_gravity="center_horizontal"></Button>
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/activateCountriesButton" android:text="@string/countries" android:clickable="true" android:layout_gravity="center_horizontal"></Button>
+    <Button android:layout_height="wrap_content" android:id="@+id/activateLanguagesButton" android:text="@string/languages" android:clickable="true" android:layout_gravity="center_horizontal" style="@style/ActionButton" android:paddingLeft="6px" android:paddingRight="6px" android:drawableLeft="@android:drawable/ic_menu_sort_alphabetically" android:layout_weight="1"></Button>
+    <Button android:layout_height="wrap_content" android:id="@+id/activateCountriesButton" android:text="@string/countries" android:clickable="true" android:layout_gravity="center_horizontal" style="@style/ActionButton" android:paddingLeft="6px" android:paddingRight="6px" android:drawableLeft="@android:drawable/ic_menu_sort_alphabetically" android:layout_weight="1"></Button>
 </LinearLayout>
