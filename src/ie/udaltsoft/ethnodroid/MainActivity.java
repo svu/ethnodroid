@@ -1,5 +1,7 @@
 package ie.udaltsoft.ethnodroid;
 
+import ie.udaltsoft.ethnodroid.parsers.CountryListPageParser;
+import ie.udaltsoft.ethnodroid.parsers.LanguageListPageParser;
 import ie.udaltsoft.ethnodroid.tasks.LoadCountryListTask;
 import ie.udaltsoft.ethnodroid.tasks.LoadLanguageListTask;
 import android.os.Bundle;
@@ -48,4 +50,10 @@ public class MainActivity extends EthnodroidActivity {
 			new LoadCountryListTask(MainActivity.this).execute("all");
 		}
 	};
+
+	@Override
+	public void onLowMemory() {
+		CountryListPageParser.clearCache();
+		LanguageListPageParser.clearCache();
+	}
 }

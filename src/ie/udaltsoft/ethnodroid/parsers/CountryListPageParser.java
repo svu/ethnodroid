@@ -59,4 +59,8 @@ public class CountryListPageParser extends WebPageParser<GroupedCodes> {
 		}
 		return results;
 	}
+
+	public static void clearCache() {
+		results = null;
+	}
 }

@@ -54,4 +54,8 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 		}
 		return results;
 	}
+
+	public static void clearCache() {
+		results = null;
+	}
 }
