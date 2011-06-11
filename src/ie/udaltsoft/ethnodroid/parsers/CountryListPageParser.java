@@ -13,6 +13,8 @@ import android.text.Html;
 
 public class CountryListPageParser extends WebPageParser<GroupedCodes> {
 
+	private static GroupedCodes results = null;
+
 	private final static String[] regions = { "Africa", "Americas", "Asia",
 			"Europe", "Pacific" };
 
@@ -26,15 +28,18 @@ public class CountryListPageParser extends WebPageParser<GroupedCodes> {
 
 	@Override
 	public GroupedCodes parse(BufferedReader rdr) throws IOException {
+
+		if (results != null)
+			return results;
+
 		String inputLine;
-		Matcher m;
 		int regionIdx = -1;
 		ArrayList<NamedCode> currentRegion = null;
 
-		final GroupedCodes results = new GroupedCodes();
+		results = new GroupedCodes();
 
 		while ((inputLine = rdr.readLine()) != null) {
-			m = REGION_START_MATCHER.matcher(inputLine);
+			Matcher m = REGION_START_MATCHER.matcher(inputLine);
 			if (m.matches()) {
 				regionIdx++;
 				currentRegion = new ArrayList<NamedCode>();

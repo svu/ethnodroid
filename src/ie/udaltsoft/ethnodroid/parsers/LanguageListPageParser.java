@@ -13,6 +13,8 @@ import android.text.Html;
 
 public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 
+	private static GroupedCodes results = null;
+
 	private static final Pattern REGION_START_MATCHER = Pattern
 			.compile("\\s*/([A-Z])/\\s*");
 	private static final Pattern LANGUAGE_MATCHER = Pattern
@@ -23,15 +25,18 @@ public class LanguageListPageParser extends WebPageParser<GroupedCodes> {
 
 	@Override
 	public GroupedCodes parse(BufferedReader rdr) throws IOException {
+
+		if (results != null)
+			return results;
+
 		String inputLine;
-		Matcher m;
 		int regionIdx = -1;
 		ArrayList<NamedCode> currentRegion = null;
 
-		final GroupedCodes results = new GroupedCodes();
+		results = new GroupedCodes();
 
 		while ((inputLine = rdr.readLine()) != null) {
-			m = REGION_START_MATCHER.matcher(inputLine);
+			Matcher m = REGION_START_MATCHER.matcher(inputLine);
 			if (m.matches()) {
 				final String letter = m.group(1);
 				regionIdx++;
