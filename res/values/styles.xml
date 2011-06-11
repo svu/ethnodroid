@@ -31,7 +31,6 @@
     </style>
 
     <style name="TextAppearance.ActionButton">
-        <item name="android:textStyle">italic</item>
     </style>
     <style name="InfoItemTitle" parent="android:TextAppearance.Large">
         <item name="android:textStyle">bold</item>
