@@ -4,6 +4,8 @@ import ie.udaltsoft.ethnodroid.parsers.data.GroupedCodes;
 import ie.udaltsoft.ethnodroid.parsers.data.NamedCode;
 import ie.udaltsoft.ethnodroid.tasks.ExtractCountryTask;
 import ie.udaltsoft.ethnodroid.tasks.ExtractLanguageTask;
+import ie.udaltsoft.ethnodroid.tasks.LoadCountryListTask;
+import ie.udaltsoft.ethnodroid.tasks.LoadLanguageListTask;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.Arrays;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
@@ -135,6 +138,21 @@ public class SearchActivity extends EthnodroidActivity {
 		}
 
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Single menu item - no need to analyse what item was pressed
+		switch (searchType) {
+		case LANGUAGE:
+			new LoadCountryListTask(SearchActivity.this).execute("all");
+			return true;
+		case COUNTRY:
+			new LoadLanguageListTask(SearchActivity.this).execute("all");
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
 	}
 
 	private final OnKeyListener searchKeyListener = new OnKeyListener() {
