@@ -224,7 +224,8 @@ public class LanguagePageParser extends WebPageParser<LanguageParseResults> {
 					break;
 				m = FULL_TD_MATCHER.matcher(inputLine);
 				if (m.matches()) {
-					country.setLanguageDevelopmentText(m.group(1));
+					country.setLanguageDevelopmentText(Html
+							.fromHtml(m.group(1)).toString());
 					state = State.BLANK;
 				}
 				break;
