@@ -35,9 +35,9 @@
          of drawable/semi_black-->
     <ImageView android:src="@drawable/ethno_top" android:layout_height="wrap_content" android:clickable="true" android:id="@+id/topImage" android:paddingBottom="6dip" android:layout_width="wrap_content" android:layout_gravity="center_horizontal"></ImageView>
     <TableLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:shrinkColumns="1" android:paddingBottom="6dip" android:id="@+id/countryInfoTableLayout">
-        <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/countryRow">
-            <TextView android:layout_height="wrap_content" style="@style/InfoItemTitle" android:paddingRight="6dip" android:layout_width="wrap_content" android:id="@+id/countryNameTitle" android:text="@string/country_name_title"></TextView>
-            <TextView android:layout_height="wrap_content" android:text="TextView" style="@style/InfoItem" android:layout_width="wrap_content" android:id="@+id/countryNameText"></TextView>
+        <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/countryRow" android:paddingBottom="6dip">
+            <TextView android:layout_height="wrap_content" android:paddingRight="6dip" android:layout_width="wrap_content" android:id="@+id/countryNameTitle" android:text="@string/country_name_title" style="@style/ListTitleTitle"></TextView>
+            <TextView android:layout_height="wrap_content" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/countryNameText" style="@style/ListTitleValue"></TextView>
         </TableRow>
     </TableLayout>
     <ListView android:layout_width="match_parent" android:layout_height="fill_parent" android:id="@+id/languageList"></ListView>
